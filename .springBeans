@@ -7,7 +7,6 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/com/mattmessa/fitly/beans/beans.xml</config>
 		<config>WebContent/WEB-INF/fitly-servlet.xml</config>
 		<config>src/com/mattmessa/fitly/config/dao-context.xml</config>
 		<config>src/com/mattmessa/fitly/config/service-context.xml</config>

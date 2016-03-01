@@ -11,6 +11,7 @@
 </head>
 <body>
 Fitly Test 1, 2, 3
+<br>
 
 <c:forEach var="row" items="${users}">
     email: ${row.email}<br/>
