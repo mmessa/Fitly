@@ -20,7 +20,7 @@ public class UserDAO {
 		System.out.println("Successfully loaded Users DAO");
 	}
 	
-	//@Autowired	
+	@Autowired	
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new JdbcTemplate(jdbc);
 	}
