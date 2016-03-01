@@ -19,5 +19,7 @@ Fitly Test 1, 2, 3
 </c:forEach>
 
 
+<a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
+
 </body>
 </html>
