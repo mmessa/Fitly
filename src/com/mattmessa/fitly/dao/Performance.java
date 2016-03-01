@@ -8,7 +8,7 @@ public class Performance {
 	private int challengeId;
 	private Date startedDateTime; //should be date time
 	private boolean completed;
-	private Date completedDateTime;
+	private Date completedDateTime; //should be date time
 	
 	public int getUserId() {
 		return userId;
