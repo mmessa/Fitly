@@ -15,17 +15,11 @@ import org.springframework.stereotype.Component;
 public class UserDAO {
 	
 	private JdbcTemplate jdbc;
-	
-	public UserDAO(){
-		System.out.println("Successfully loaded Users DAO");
-	}
-	
+		
 	@Autowired	
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new JdbcTemplate(jdbc);
 	}
-
-
 
 	public List<User> getUsers(){
 		

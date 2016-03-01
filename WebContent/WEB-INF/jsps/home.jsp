@@ -12,14 +12,9 @@
 <body>
 Fitly Test 1, 2, 3
 
-<sql:query var="rs" dataSource="jdbc/Fitly">
-select userId, email, password from User
-</sql:query>
-
-<c:forEach var="row" items="${rs.rows}">
-    userId ${row.userId}<br/>
-    email ${row.email}<br/>
-    password ${row.password}<br/>
+<c:forEach var="row" items="${users}">
+    email: ${row.email}<br/>
+    password: ${row.password}<br/>
 </c:forEach>
 
 

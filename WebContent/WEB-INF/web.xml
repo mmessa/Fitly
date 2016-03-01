@@ -40,6 +40,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 		classpath:com/mattmessa/fitly/config/dao-context.xml
+		classpath:com/mattmessa/fitly/config/service-context.xml
 		</param-value>
 	</context-param>
 
