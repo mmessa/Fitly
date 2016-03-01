@@ -1,4 +1,4 @@
-package com.mattmessa.fitly;
+package com.mattmessa.fitly.dao;
 
 public class User {
 

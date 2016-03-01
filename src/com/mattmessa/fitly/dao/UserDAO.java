@@ -1,4 +1,4 @@
-package com.mattmessa.fitly;
+package com.mattmessa.fitly.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +16,11 @@ public class UserDAO {
 	
 	private JdbcTemplate jdbc;
 	
-	@Autowired	
+	public UserDAO(){
+		System.out.println("Successfully loaded Users DAO");
+	}
+	
+	//@Autowired	
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new JdbcTemplate(jdbc);
 	}

@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.mattmessa.fitly.dao.User;
+import com.mattmessa.fitly.dao.UserDAO;
+
 public class App {
 
 	public static void main(String[] args) {
