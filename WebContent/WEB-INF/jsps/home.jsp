@@ -6,11 +6,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/main.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Fitly Home</title>
 </head>
 <body>
-Fitly Test 1, 2, 3
+<p>
+<h1>Fitly Test 1, 2, 3</h1>
 <br>
 
 <c:forEach var="row" items="${users}">
@@ -20,6 +23,6 @@ Fitly Test 1, 2, 3
 
 
 <a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
-
+<p>
 </body>
 </html>
