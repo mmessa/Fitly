@@ -13,7 +13,7 @@
 	
 	<c:if test="${param.error != null}">
 	
-	<p class="error">Login failed.</span>
+	<p class="error">Login failed.</p>
 	
 	</c:if>
 	

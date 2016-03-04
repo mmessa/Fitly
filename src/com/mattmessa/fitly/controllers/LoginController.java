@@ -1,5 +1,7 @@
 package com.mattmessa.fitly.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +42,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/createaccount", method=RequestMethod.POST)
-	public String createAccount(User user, BindingResult result) {
+	public String createAccount(@Valid User user, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			return "createaccount";
