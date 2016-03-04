@@ -2,7 +2,6 @@ package com.mattmessa.fitly.dao;
 
 public class User {
 
-	private int userId;
 	private String username;
 	private String password;
 	private boolean enabled = false;
@@ -14,7 +13,6 @@ public class User {
 	}
 	
 	public User(int userId, String username, String password, boolean enabled, String authority, String email) {
-		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
@@ -46,13 +44,6 @@ public class User {
 		this.authority = authority;
 	}
 
-	public int getId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
 	public String getEmail() {
 		return email;
@@ -72,7 +63,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", email=" + email + ", password=" + password + "]";
+		return "User [ email=" + email + ", password=" + password + "]";
 	}
 
 }

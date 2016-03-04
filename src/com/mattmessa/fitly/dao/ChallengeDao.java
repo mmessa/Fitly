@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component("ChallengeDAO")
-public class ChallengeDAO {
+public class ChallengeDao {
 
 	private JdbcTemplate jdbc;
 

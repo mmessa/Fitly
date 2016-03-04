@@ -11,33 +11,33 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-@Component("ItemDAO")
-public class ItemDAO {
+@Component("ProfileDAO")
+public class ProfileDao {
 
 	private JdbcTemplate jdbc;
-	
-	@Autowired	
+
+	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new JdbcTemplate(jdbc);
 	}
 
-	public List<Item> getItems(){
-		
-		return jdbc.query("select * from Item", new RowMapper<Item>(){
+	public List<Profile> getProfiles() {
+
+		return jdbc.query("select * from Profile", new RowMapper<Profile>() {
 
 			@Override
-			public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Item item = new Item();
-				
-				item.setItemId(rs.getInt("userId"));
-				item.setPrice(rs.getInt("price"));
-				item.setName(rs.getString("name"));
-				item.setImageUrl(rs.getString("imageUrl"));
+			public Profile mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Profile profile = new Profile();
 
-				return item;
+				profile.setUserId(rs.getInt("userId"));
+				profile.setFirstName(rs.getString("firstName"));
+				profile.setLastName(rs.getString("lastName"));
+
+				return profile;
 			}
-			
+
 		});
-		
+
 	}
+
 }

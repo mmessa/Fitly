@@ -8,23 +8,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mattmessa.fitly.dao.User;
-import com.mattmessa.fitly.service.FitlyService;
+import com.mattmessa.fitly.service.UsersService;
 
 @Controller
 public class HomeController {
 
-	private FitlyService fitlyService;
+	private UsersService usersService;
 	
 	@Autowired
-	public void setFitlyService(FitlyService fitlyService) {
-		this.fitlyService = fitlyService;
+	public void setFitlyService(UsersService usersService) {
+		this.usersService = usersService;
 	}
 
 	@RequestMapping("/")
 	public String showHome(Model model)
 	{
 		
-		List<User> users = fitlyService.getCurrent();
+		List<User> users = usersService.getCurrent();
 		
 		model.addAttribute("users", users);
 			
