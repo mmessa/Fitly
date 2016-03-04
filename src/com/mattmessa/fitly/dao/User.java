@@ -8,13 +8,13 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
 
-	@NotBlank(message="Username cannot be blank.")
-	@Size(min=1, max=20, message="Username must be between 1 and 20 characters long.")
+	@NotBlank
+	@Size(min=1, max=20)
 	private String username;
 	
 	@NotBlank
 	@Pattern(regexp="^\\S+$")
-	@Size(min=1, max=20, message="Password must be between 1 and 20 characters long.")
+	@Size(min=1, max=20)
 	private String password;
 	
 	@Email
