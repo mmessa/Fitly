@@ -2,14 +2,19 @@
 
 h1 {
 	text-align: center;
-	color: red;
+	color: black;
 }
 
 h3 {
 	text-align: center;
 }
 
-error {
+.valid {
+	color: green;
+	font-size: small;
+}
+
+.error {
 	color: red;
-	font-size: medium;
+	font-size: small;
 }
