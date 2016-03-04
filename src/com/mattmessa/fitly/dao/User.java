@@ -23,8 +23,6 @@ public class User {
 	private boolean enabled = false;
 	private String authority;
 	
-	
-
 	public User(){
 		
 	}
