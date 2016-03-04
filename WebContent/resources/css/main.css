@@ -8,3 +8,8 @@ h1 {
 h3 {
 	text-align: center;
 }
+
+p.error {
+	color: red;
+	font-size: medium;
+}
