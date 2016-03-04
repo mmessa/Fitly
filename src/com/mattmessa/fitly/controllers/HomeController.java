@@ -3,8 +3,10 @@ package com.mattmessa.fitly.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mattmessa.fitly.dao.User;
@@ -30,4 +32,11 @@ public class HomeController {
 			
 		return "home";
 	}
+	
+	@ExceptionHandler(DataAccessException.class)
+	public String handleDatabaseException(DataAccessException ex) {
+		
+		return "error";
+	}
+	
 }
