@@ -27,5 +27,10 @@ public class UsersService {
 	{
 		return userDao.getUsers();
 	}
+
+	public boolean exists(String username) {
+		// TODO Auto-generated method stub
+		return userDao.exists(username);
+	}
 	
 }
