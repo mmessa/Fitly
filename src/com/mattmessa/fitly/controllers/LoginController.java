@@ -41,7 +41,7 @@ public class LoginController {
 	    if (auth != null){    
 	        new SecurityContextLogoutHandler().logout(request, response, auth);
 	    }
-	    return "redirect:/login";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
+	    return "loggedout";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
 	}
 	
 	@RequestMapping("/newaccount")
