@@ -23,6 +23,10 @@
 
 
 <a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
+
 <p>
+<a href="<c:url value='/loggedout'/>">Logout</a>
+</p>
+
 </body>
 </html>
