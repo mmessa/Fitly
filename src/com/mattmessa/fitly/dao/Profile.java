@@ -1,5 +1,6 @@
 package com.mattmessa.fitly.dao;
 
+import java.sql.Blob;
 import java.util.Date;
 
 public class Profile {
@@ -7,6 +8,7 @@ public class Profile {
 	private int userId;
 	private String firstName;
 	private String lastName;
+	private Blob image;
 	private int heightFeet;
 	private int heightInches;
 	private Date DOB;

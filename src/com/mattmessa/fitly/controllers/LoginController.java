@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.User;
-import com.mattmessa.fitly.service.UsersService;
+import com.mattmessa.fitly.service.UserService;
 
 @Controller
 public class LoginController {
 	
-	private UsersService usersService;
+	private UserService usersService;
 	
 	@Autowired
-	public void setUsersService(UsersService usersService) {
+	public void setUsersService(UserService usersService) {
 		this.usersService = usersService;
 	}
 
@@ -41,7 +41,7 @@ public class LoginController {
 	    if (auth != null){    
 	        new SecurityContextLogoutHandler().logout(request, response, auth);
 	    }
-	    return "loggedout";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
+	    return "loggedout";
 	}
 	
 	@RequestMapping("/newaccount")
@@ -73,8 +73,6 @@ public class LoginController {
 			result.rejectValue("username", "DuplicateKey.user.username");
 			return "newaccount";
 		}
-		
-		
 		
 		return "accountcreated";
 	}

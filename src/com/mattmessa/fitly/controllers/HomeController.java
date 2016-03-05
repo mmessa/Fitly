@@ -8,15 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mattmessa.fitly.dao.User;
-import com.mattmessa.fitly.service.UsersService;
+import com.mattmessa.fitly.service.UserService;
 
 @Controller
 public class HomeController {
 
-	private UsersService usersService;
+	private UserService usersService;
 	
 	@Autowired
-	public void setFitlyService(UsersService usersService) {
+	public void setFitlyService(UserService usersService) {
 		this.usersService = usersService;
 	}
 

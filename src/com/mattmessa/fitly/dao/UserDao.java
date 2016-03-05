@@ -37,13 +37,13 @@ public class UserDao {
 	
 	public List<User> getUsers(){
 		
-		return jdbc.query("select * from User", new RowMapper<User>(){
+		return jdbc.query("select * from users", new RowMapper<User>(){
 
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				User user = new User();
 				
-				
+				user.setUsername(rs.getString("username"));
 				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
 				

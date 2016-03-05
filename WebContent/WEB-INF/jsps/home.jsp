@@ -14,15 +14,20 @@
 <body>
 <p>
 <h1>Fitly Test 1, 2, 3</h1>
-<br>
 
 <c:forEach var="row" items="${users}">
+	username: ${row.username}<br/>
     email: ${row.email}<br/>
     password: ${row.password}<br/>
+    <br>
 </c:forEach>
 
 
 <a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
+
+<p>
+<a href="<c:url value='/createprofile'/>">Create Profile</a>
+</p>
 
 <p>
 <a href="<c:url value='/loggedout'/>">Logout</a>

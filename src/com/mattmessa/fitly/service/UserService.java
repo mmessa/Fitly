@@ -9,7 +9,7 @@ import com.mattmessa.fitly.dao.User;
 import com.mattmessa.fitly.dao.UserDao;
 
 @Service("usersService")
-public class UsersService {
+public class UserService {
 	
 	private UserDao userDao;
 	
