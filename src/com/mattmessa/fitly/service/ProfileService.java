@@ -14,7 +14,7 @@ public class ProfileService {
 	private ProfileDao profileDao;
 
 	@Autowired
-	public void setProfileDAO(ProfileDao profileDao) {
+	public void setProfileDao(ProfileDao profileDao) {
 		this.profileDao = profileDao;
 	}
 
