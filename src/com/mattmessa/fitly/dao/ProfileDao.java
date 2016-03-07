@@ -37,21 +37,39 @@ public class ProfileDao {
 	*/
 	    BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 	    
-		return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, NULL, :city, :state, :zipCode, :gym, 0, 0)", params) == 1;
+		return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, :gender, :city, :state, :zipCode, :gym, 0, 0)", params) == 1;
 	}
 
 	public List<Profile> getProfiles() {
 
-		return jdbc.query("select * from profile", new RowMapper<Profile>() {
+		return jdbc.query("select * from profile, users where profile.userId=users.userId", new RowMapper<Profile>() {
 
 			@Override
 			public Profile mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				User user = new User();
+				user.setAuthority(rs.getString("authority"));
+				user.setEmail(rs.getString("email"));
+				user.setUsername(rs.getString("username"));
+				user.setEnabled(true);
+				
+				
 				Profile profile = new Profile();
-
-				profile.setUserId(rs.getInt("userId"));
+				profile.setUser(user);
 				profile.setFirstName(rs.getString("firstName"));
 				profile.setLastName(rs.getString("lastName"));
-
+				profile.setHeightFeet(rs.getInt("heightFeet"));
+				profile.setHeightInches(rs.getInt("heightInches"));
+				profile.setDOB(rs.getDate("DOB"));
+				profile.setGender(rs.getString("gender"));
+				profile.setCity(rs.getString("city"));
+				profile.setState(rs.getString("state"));
+				profile.setZipCode(rs.getInt("zipCode"));
+				profile.setGym(rs.getString("gym"));
+				profile.setLevel(rs.getInt("level"));
+				profile.setExperiencePoints(rs.getInt("experiencePoints"));
+				profile.setCoins(rs.getInt("coins"));
+				
 				return profile;
 			}
 

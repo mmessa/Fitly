@@ -5,14 +5,13 @@ import java.util.Date;
 
 public class Profile {
 
-	private int userId;
 	private String firstName;
 	private String lastName;
 	private Blob image;
 	private int heightFeet;
 	private int heightInches;
 	private Date DOB;
-	private char gender;
+	private String gender;
 	private String city;
 	private String state;
 	private int zipCode;
@@ -27,12 +26,10 @@ public class Profile {
 		
 	}
 	
-	
-	public Profile(int userId, String firstName, String lastName, Blob image, int heightFeet, int heightInches,
-			Date dOB, char gender, String city, String state, int zipCode, String gym, int level, int experiencePoints,
+	public Profile(String firstName, String lastName, Blob image, int heightFeet, int heightInches,
+			Date dOB, String gender, String city, String state, int zipCode, String gym, int level, int experiencePoints,
 			int coins, User user) {
 		super();
-		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.image = image;
@@ -62,11 +59,9 @@ public class Profile {
 		this.user = user;
 	}
 	public int getUserId() {
-		return userId;
+		return user.getUserId();
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -97,10 +92,10 @@ public class Profile {
 	public void setDOB(Date dOB) {
 		DOB = dOB;
 	}
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getCity() {
@@ -148,7 +143,7 @@ public class Profile {
 
 	@Override
 	public String toString() {
-		return "Profile [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", image=" + image
+		return "Profile [firstName=" + firstName + ", lastName=" + lastName + ", image=" + image
 				+ ", heightFeet=" + heightFeet + ", heightInches=" + heightInches + ", DOB=" + DOB + ", gender="
 				+ gender + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + ", gym=" + gym + ", level="
 				+ level + ", experiencePoints=" + experiencePoints + ", coins=" + coins + ", user=" + user + "]";
@@ -164,7 +159,7 @@ public class Profile {
 		result = prime * result + coins;
 		result = prime * result + experiencePoints;
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + gender;
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((gym == null) ? 0 : gym.hashCode());
 		result = prime * result + heightFeet;
 		result = prime * result + heightInches;
@@ -205,7 +200,10 @@ public class Profile {
 				return false;
 		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (gender != other.gender)
+		if (gender == null) {
+			if (other.gender != null)
+				return false;
+		} else if (!gender.equals(other.gender))
 			return false;
 		if (gym == null) {
 			if (other.gym != null)
@@ -238,11 +236,4 @@ public class Profile {
 		return true;
 	}
 
-	
-	
-	
-	
-	
-	
-	
 }
