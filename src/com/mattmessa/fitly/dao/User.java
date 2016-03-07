@@ -94,7 +94,7 @@ public class User {
 		result = prime * result + ((authority == null) ? 0 : authority.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (enabled ? 1231 : 1237);
-		result = prime * result + userId;
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -120,7 +120,10 @@ public class User {
 			return false;
 		if (enabled != other.enabled)
 			return false;
-		if (userId != other.userId)
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -132,9 +135,11 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", email=" + email + ", enabled=" + enabled
-				+ ", authority=" + authority + "]";
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", email=" + email
+				+ ", enabled=" + enabled + ", authority=" + authority + "]";
 	}
+
+	
 	
 	
 	

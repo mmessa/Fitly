@@ -154,6 +154,7 @@ public class Profile {
 				+ level + ", experiencePoints=" + experiencePoints + ", coins=" + coins + ", user=" + user + "]";
 	}
 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -171,10 +172,10 @@ public class Profile {
 		result = prime * result + level;
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
-		result = prime * result + userId;
 		result = prime * result + zipCode;
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -232,12 +233,12 @@ public class Profile {
 				return false;
 		} else if (!user.equals(other.user))
 			return false;
-		if (userId != other.userId)
-			return false;
 		if (zipCode != other.zipCode)
 			return false;
 		return true;
 	}
+
+	
 	
 	
 	
