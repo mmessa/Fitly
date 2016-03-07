@@ -38,7 +38,7 @@ public class UserDao {
 		params.addValue("enabled", user.isEnabled());
 		params.addValue("authority", user.getAuthority());
 
-		return jdbc.update("insert into users (username, email, password, enabled, authority) values (:username, :email, :password, :enabled)", params) == 1;
+		return jdbc.update("insert into users (username, email, password, enabled, authority) values (:username, :email, :password, :enabled, :authority)", params) == 1;
 		
 	}
 	
