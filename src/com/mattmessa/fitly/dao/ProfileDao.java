@@ -37,7 +37,7 @@ public class ProfileDao {
 	*/
 	    BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 	    
-		return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, :gender, :city, :state, :zipCode, :gym, 0, 0)", params) == 1;
+		return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:userId, :firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, :gender, :city, :state, :zipCode, :gym, 0, 0)", params) == 1;
 	}
 
 	public List<Profile> getProfiles() {
