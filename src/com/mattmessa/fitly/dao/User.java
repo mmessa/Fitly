@@ -8,6 +8,8 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
 
+	private int userId;
+	
 	@NotBlank
 	@Size(min=1, max=20)
 	private String username;
@@ -29,6 +31,7 @@ public class User {
 	}
 	
 	public User(int userId, String username, String password, boolean enabled, String authority, String email) {
+		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
@@ -60,7 +63,6 @@ public class User {
 		this.authority = authority;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
@@ -77,9 +79,12 @@ public class User {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "User [ email=" + email + ", password=" + password + "]";
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	@Override
@@ -89,6 +94,7 @@ public class User {
 		result = prime * result + ((authority == null) ? 0 : authority.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (enabled ? 1231 : 1237);
+		result = prime * result + userId;
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -114,6 +120,8 @@ public class User {
 			return false;
 		if (enabled != other.enabled)
 			return false;
+		if (userId != other.userId)
+			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;
@@ -121,6 +129,14 @@ public class User {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", email=" + email + ", enabled=" + enabled
+				+ ", authority=" + authority + "]";
+	}
+	
+	
 	
 	
 
