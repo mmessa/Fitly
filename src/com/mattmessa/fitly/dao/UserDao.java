@@ -60,6 +60,25 @@ public class UserDao {
 		});
 	
 	}
+	
+	public User getUser(String username) {
+		System.out.printf("in userdao username is: %s\n", username);
+		MapSqlParameterSource params = new MapSqlParameterSource("username", username);
+			return jdbc.queryForObject("select * from users where users.username = :username", params, new RowMapper<User>() {
+
+					public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+						User user = new User();
+						user.setUserId(rs.getInt("userId"));
+						user.setAuthority(rs.getString("authority"));
+						user.setEmail(rs.getString("email"));
+						user.setEnabled(true);
+						user.setUsername(rs.getString("username"));
+
+						return user;
+					}
+
+				});
+	}
 
 	public boolean exists(String username) {
 		return jdbc.queryForObject("select count(*) from users where username=:username", 

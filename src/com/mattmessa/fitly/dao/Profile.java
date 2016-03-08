@@ -23,7 +23,7 @@ public class Profile {
 	private User user;
 	
 	public Profile() {
-		
+		this.user = new User();
 	}
 	
 	public Profile(String firstName, String lastName, Blob image, int heightFeet, int heightInches,
