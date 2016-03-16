@@ -62,7 +62,7 @@ public class UserDao {
 	}
 	
 	public User getUser(String username) {
-		System.out.printf("in userdao username is: %s\n", username);
+		
 		MapSqlParameterSource params = new MapSqlParameterSource("username", username);
 			return jdbc.queryForObject("select * from users where users.username = :username", params, new RowMapper<User>() {
 

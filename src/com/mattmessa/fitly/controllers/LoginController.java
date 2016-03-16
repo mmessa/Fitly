@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,16 @@ public class LoginController {
 
 	@RequestMapping("/login")
 	public String showLogin(){
+		/*
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		UserDetails userDetails =  (UserDetails) auth.getPrincipal();
+	    String username = userDetails.getUsername();
+	    
+		User user = usersService.getUser(username);
+		request.getSession().setAttribute("userId", user.getUserId());
+		//int userId = (int) request.getSession().getAttribute("userId");
+		System.out.printf("UserId = %d", request.getSession().getAttribute("userId"));
+		*/
 		return "login";
 	}
 	

@@ -24,7 +24,7 @@ public class HomeController {
 	public String showHome(Model model)
 	{
 		
-		List<User> users = usersService.getCurrent();
+		List<User> users = usersService.getUsers();
 		
 		model.addAttribute("users", users);
 			

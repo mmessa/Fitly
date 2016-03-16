@@ -22,4 +22,5 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 	<property name="basename" value="com.mattmessa.fitly.messages.messages"></property>
 	</bean>
+	
 </beans>

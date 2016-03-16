@@ -2,6 +2,7 @@ package com.mattmessa.fitly.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,21 +37,28 @@ public class ProfileController {
 		this.usersService = usersService;
 	}
 	
+	
 	@RequestMapping("/profile")
-	public String showProfile(Model model)
+	public String showProfile(Model model, HttpServletRequest request)
 	{
+		int userId = (int) request.getSession().getAttribute("userId");
+		System.out.printf("controller id = %d", userId);
+		Profile profile = profilesService.getProfile(userId);
+		model.addAttribute("profile", profile);
 		return "profile";
 	}
 	
+	/*
 	@RequestMapping("/profiles")
 	public String showProfiles(Model model) {
 		
-		List<Profile> profiles = profilesService.getCurrent();
+		List<Profile> profiles = profilesService.getProfiles();
 		
 		model.addAttribute("profiles", profiles);
 		
 		return "profiles";
 	}
+	*/
 	
 	@RequestMapping("/createprofile")
 	public String createProfile(Model model) {
@@ -61,18 +69,13 @@ public class ProfileController {
 	}
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid Profile profile, BindingResult result) {
+	public String doCreate(Model model, @Valid Profile profile, BindingResult result, HttpServletRequest request) {
 		
 		if(result.hasErrors()) {
 			return "createprofile";
 		}
-		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		UserDetails userDetails =  (UserDetails) auth.getPrincipal();
-	    String username = userDetails.getUsername();
-		
-		User user = usersService.getUser(username);
-		int userId = user.getUserId();
+	
+		int userId = (int)request.getSession().getAttribute("userId");
 		
 		profile.getUser().setUserId(userId);
 		

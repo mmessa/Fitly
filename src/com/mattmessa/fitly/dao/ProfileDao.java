@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -41,22 +42,20 @@ public class ProfileDao {
 		                   // insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (3,         'Matt',     'Messa', NULL,      6,           2,         NULL, NULL, 'chico' , 'ca', 95928, 'wrec', 0, 0, NULL);
 	}
 
-	public List<Profile> getProfiles() {
+	public Profile getProfile(int userId) {
+		
+		
+		System.out.printf("dao id = %d", userId);
 
-		return jdbc.query("select * from profile, users where profile.userId=users.userId", new RowMapper<Profile>() {
+		MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
+		
+		 return jdbc.queryForObject("select * from profile where profile.userId=:userId", params, new RowMapper<Profile>() {
 
 			@Override
 			public Profile mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
-				User user = new User();
-				user.setAuthority(rs.getString("authority"));
-				user.setEmail(rs.getString("email"));
-				user.setUsername(rs.getString("username"));
-				user.setEnabled(true);
-				
-				
 				Profile profile = new Profile();
-				profile.setUser(user);
+				//profile.setUser(user);
 				profile.setFirstName(rs.getString("firstName"));
 				profile.setLastName(rs.getString("lastName"));
 				profile.setHeightFeet(rs.getInt("heightFeet"));
@@ -77,5 +76,4 @@ public class ProfileDao {
 		});
 
 	}
-
 }

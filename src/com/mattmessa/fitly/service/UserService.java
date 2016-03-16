@@ -23,14 +23,12 @@ public class UserService {
 	}
 	
 	
-	public List<User> getCurrent()
+	public List<User> getUsers()
 	{
 		return userDao.getUsers();
 	}
 	
 	public User getUser(String username) {
-		System.out.printf("test = %s\n", username);
-		System.out.printf("in user service username = %s\n", username);
 		return userDao.getUser(username);
 	}
 

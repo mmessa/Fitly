@@ -21,9 +21,18 @@ public class ProfileService {
 	public void create(Profile profile) {
 		profileDao.create(profile);
 	}
-
-	public List<Profile> getCurrent() {
+	
+	/*
+	public List<Profile> getProfiles() {
 		return profileDao.getProfiles();
 	}
+	*/
+	
+	
+	public Profile getProfile(int userId) {
+		return profileDao.getProfile(userId);
+	}
+	
+	
 	
 }

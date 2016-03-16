@@ -30,6 +30,10 @@
 </p>
 
 <p>
+<a href="<c:url value='/login'/>">Login</a>
+</p>
+
+<p>
 <a href="<c:url value='/loggedout'/>">Logout</a>
 </p>
 
