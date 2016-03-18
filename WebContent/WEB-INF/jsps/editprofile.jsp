@@ -57,25 +57,10 @@
 				<td><sf:input class="control" path="gym" name="gym"
 						type="text" /><br /> <sf:errors path="gym" cssClass="error"></sf:errors></td>
 			</tr>
-			<tr>
-				<td class="label">level:</td>
-				<td><sf:input class="control" path="level" name="level"
-						type="text" /><br /> <sf:errors path="level" cssClass="error"></sf:errors></td>
-			</tr>
-			<tr>
-				<td class="label">experiencePoints:</td>
-				<td><sf:input class="control" path="experiencePoints" name="experiencePoints"
-						type="text" /><br /> <sf:errors path="experiencePoints" cssClass="error"></sf:errors></td>
-			</tr>
-			<tr>
-				<td class="label">coins:</td>
-				<td><sf:input class="control" path="coins" name="coins"
-						type="text" /><br /> <sf:errors path="coins" cssClass="error"></sf:errors></td>
-			</tr>
 			
 			<tr>
 				<td class="label"></td>
-				<td><input class="control" value="Create profile" type="submit" /></td>
+				<td><input class="control" value="Update Profile" type="submit" /></td>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</tr>
 		</table>

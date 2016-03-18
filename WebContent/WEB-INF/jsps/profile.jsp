@@ -9,7 +9,10 @@
 </head>
 <body>
 
-Profile Test 1, 2, 3<br>
+
+<p>
+<a href="<c:url value='/home'/>">Home</a>
+</p>
 
 First Name = <c:out value='${profile.firstName}' /><br>
 Last Name = <c:out value='${profile.lastName}' /><br>
@@ -27,6 +30,11 @@ XP = <c:out value='${profile.experiencePoints}' /><br>
 Coins = <c:out value='${profile.coins}' /><br><br>
 
 
+
+
+<p>
+<a href="<c:url value='editprofile'/>">Edit Profile</a>
+</p>
 
 
 
