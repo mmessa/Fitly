@@ -1,6 +1,7 @@
 package com.mattmessa.fitly.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Profile;
 import com.mattmessa.fitly.dao.User;
+import com.mattmessa.fitly.dao.Weight;
 import com.mattmessa.fitly.service.ProfileService;
 import com.mattmessa.fitly.service.UserService;
+import com.mattmessa.fitly.service.WeightService;
 
 
 @Controller
@@ -26,7 +29,14 @@ public class ProfileController {
 
 	private ProfileService profilesService;
 	private UserService usersService;
+	private WeightService weightsService;
 	
+	
+	@Autowired
+	public void setWeightsService(WeightService weightsService) {
+		this.weightsService = weightsService;
+	}
+
 	@Autowired
 	public void setProfilesService(ProfileService profilesService) {
 		this.profilesService = profilesService;
@@ -44,7 +54,9 @@ public class ProfileController {
 		int userId = (int) request.getSession().getAttribute("userId");
 		System.out.printf("controller id = %d", userId);
 		Profile profile = profilesService.getProfile(userId);
+		List<Weight> weights = weightsService.getWeights(userId);
 		model.addAttribute("profile", profile);
+		model.addAttribute("weight", weights);
 		return "profile";
 	}
 	
