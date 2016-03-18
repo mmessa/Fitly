@@ -10,15 +10,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
 	<sf:form method="post"
-		action="${pageContext.request.contextPath}/docreate"
+		action="${pageContext.request.contextPath}/updateprofile"
 		commandName="profile">
-
+	<sf:input type="hidden" name="userId" path="userId"/>
 		<table>
 			<tr>
 				<td class="label">First Name:</td>
-				<td><sf:input class="control" path="firstName" name="firstName"
+				<td><sf:input class="control" path="firstName" name="firstName" 
 						type="text" /><br /> <sf:errors path="firstName" cssClass="error"></sf:errors></td>
 			</tr>
 			<tr>

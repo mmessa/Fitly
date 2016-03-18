@@ -17,6 +17,8 @@
 
 	<security:http use-expressions="true">
 		<security:intercept-url pattern="/profile" access="isAuthenticated()" />
+		<security:intercept-url pattern="/editprofile" access="isAuthenticated()" />
+		<security:intercept-url pattern="/updateprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/loggedout" access="permitAll" />
 		<security:intercept-url pattern="/logout" access="permitAll" />

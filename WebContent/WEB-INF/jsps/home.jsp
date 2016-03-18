@@ -26,7 +26,7 @@
 <a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
 
 <p>
-<a href="<c:url value='/createprofile'/>">Create Profile</a>
+<a href="<c:url value='/editprofile'/>">Edit Profile</a>
 </p>
 
 <p>

@@ -36,9 +36,14 @@ public class ProfileDao {
 	    Date currentDate = sdf.parse(sdf.format(new Date()));		
 			
 	*/
-	    BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
+		MapSqlParameterSource params = new MapSqlParameterSource();
+	    //BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 	    
-		return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:userId, :firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, NULL, :city, :state, :zipCode, :gym, 0, 0, NULL)", params) == 1;
+		params.addValue("userId", profile.getUserId());
+		
+		return jdbc.update("insert into profile (userId) values (:userId)", params) == 1;
+
+		//return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:userId, :firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, NULL, :city, :state, :zipCode, :gym, 0, 0, NULL)", params) == 1;
 		                   // insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (3,         'Matt',     'Messa', NULL,      6,           2,         NULL, NULL, 'chico' , 'ca', 95928, 'wrec', 0, 0, NULL);
 	}
 
@@ -55,7 +60,7 @@ public class ProfileDao {
 			public Profile mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
 				Profile profile = new Profile();
-				//profile.setUser(user);
+				profile.setUserId(rs.getInt("userId"));
 				profile.setFirstName(rs.getString("firstName"));
 				profile.setLastName(rs.getString("lastName"));
 				profile.setHeightFeet(rs.getInt("heightFeet"));
@@ -76,4 +81,11 @@ public class ProfileDao {
 		});
 
 	}
+	
+	public boolean updateProfile(Profile profile) {
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
+
+		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints where userId=:userId", params) == 1;
+	}
+	
 }

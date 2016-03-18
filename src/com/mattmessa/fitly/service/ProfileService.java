@@ -28,6 +28,9 @@ public class ProfileService {
 	}
 	*/
 	
+	public boolean updateProfile(Profile profile) {
+		return profileDao.updateProfile(profile);
+	}
 	
 	public Profile getProfile(int userId) {
 		return profileDao.getProfile(userId);

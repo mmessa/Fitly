@@ -1,14 +1,14 @@
 package com.mattmessa.fitly.controllers;
 
-import java.util.List;
+import java.io.IOException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -68,20 +68,71 @@ public class ProfileController {
 		return "createprofile";
 	}
 	
-	@RequestMapping(value="/docreate", method=RequestMethod.POST)
-	public String doCreate(Model model, @Valid Profile profile, BindingResult result, HttpServletRequest request) {
+	@RequestMapping("/editprofile") 
+	public String showEditProfile(Model model, HttpServletRequest request){
+		
+		int userId = (int)request.getSession().getAttribute("userId");
+		Profile profile = profilesService.getProfile(userId);
+		System.out.printf("userId =  %d\n", profile.getUserId());
+		model.addAttribute("profile", profile);
+			
+		return "editprofile";
+	}
+	
+	@RequestMapping(value="/updateprofile", method=RequestMethod.POST)
+	public String updateProfile(@Valid Profile profile, BindingResult result, HttpServletResponse response) throws IOException, ServletException {
+		
+		//System.out.println("about to update profile");
+		profilesService.updateProfile(profile);
+		
+		response.sendRedirect("profile");
+		
+		return "profile";
+	}
+	
+	@RequestMapping("/newaccount")
+	public String showNewAccount(Model model){
+		
+		model.addAttribute("user", new User());
+		//model.addAttribute("profile", new Profile());
+		
+		return "newaccount";
+	}
+	
+	@RequestMapping(value="/createaccount", method=RequestMethod.POST)
+	public String createAccount(@Valid User user, BindingResult result) {
 		
 		if(result.hasErrors()) {
-			return "createprofile";
+			return "newaccount";
 		}
-	
-		int userId = (int)request.getSession().getAttribute("userId");
 		
-		profile.getUser().setUserId(userId);
+		user.setAuthority("user");
+		user.setEnabled(true);
+		
+		if(usersService.exists(user.getUsername())) {
+			result.rejectValue("username", "DuplicateKey.user.username");
+			return "newaccount";
+		}
+		
+		try {
+			usersService.create(user);
+		} catch (DuplicateKeyException ex) {
+			
+			result.rejectValue("username", "DuplicateKey.user.username");
+			return "newaccount";
+		}
+		
+		Profile profile = new Profile();
+		
+		user = usersService.getUser(user.getUsername());
+		
+		int userId = user.getUserId();
+		
+		profile.setUserId(userId);
 		
 		profilesService.create(profile);
 		
-		return "profilecreated";
+		return "login";
 	}
 	
 	
