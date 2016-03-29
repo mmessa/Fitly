@@ -29,11 +29,18 @@ Level = <c:out value='${profile.level}' /><br>
 XP = <c:out value='${profile.experiencePoints}' /><br>
 Coins = <c:out value='${profile.coins}' /><br><br>
 
-
-
-
 <p>
 <a href="<c:url value='editprofile'/>">Edit Profile</a>
+</p>
+
+<c:forEach var="row" items="${weights}">
+	weight: ${row.weight}<br/>
+ 	created date: ${row.createDate}<br/>
+    <br>
+</c:forEach>
+
+<p>
+<a href="<c:url value='createweight'/>">Add Weight</a>
 </p>
 
 

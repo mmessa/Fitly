@@ -32,29 +32,32 @@ public class WeightService {
 			return weightDao.updateWeight(weight);
 		}
 		
-		public Weight getWeight(int userId) {
+		public Weight getWeight(int weightId) {
 			
-			if(userId == 0) {
+			if(weightId == 0) {
 				return null;
 			}
 			
-			List<Weight> weights = weightDao.getWeights(userId);
+			Weight weight = weightDao.getWeight(weightId);
 			
-			if(weights.size() == 0) {
+			if(weight == null) {
 				return null;
 			}
 			
-			return weights.get(0);
+			return weight;
 			
 		}
 		
 		public void saveOrUpdate(Weight weight) {
+			/*
 			if(weight.getUserId() != 0) {
 				weightDao.updateWeight(weight);
 			}
+			
 			else {
+			*/
 				weightDao.create(weight);
-			}
+			//}
 			
 		}
 	

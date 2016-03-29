@@ -14,7 +14,7 @@
 	<sf:form method="post"
 		action="${pageContext.request.contextPath}/docreate"
 		commandName="weight">
-	<sf:input type="hidden" name="userId" path="userId"/>
+	<sf:input type="hidden" name="weightId" path="weightId"/>
 		<table>
 			<tr>
 				<td class="label">Weight:</td>

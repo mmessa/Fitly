@@ -52,11 +52,13 @@ public class ProfileController {
 	public String showProfile(Model model, HttpServletRequest request)
 	{
 		int userId = (int) request.getSession().getAttribute("userId");
-		System.out.printf("controller id = %d", userId);
 		Profile profile = profilesService.getProfile(userId);
+		
 		List<Weight> weights = weightsService.getWeights(userId);
+		System.out.printf("size of list = %d\n", weights.size());
+
 		model.addAttribute("profile", profile);
-		model.addAttribute("weight", weights);
+		model.addAttribute("weights", weights);
 		return "profile";
 	}
 	

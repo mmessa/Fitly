@@ -34,29 +34,31 @@ public class WeightDao {
 	    //BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 	    
 		params.addValue("userId", weight.getUserId());
+		params.addValue("weight", weight.getWeight());
 		
-		return jdbc.update("insert into weight (userId) values (:userId)", params) == 1;
+		return jdbc.update("insert into weight (userId, weight) values (:userId, :weight)", params) == 1;
 
 		//return jdbc.update("insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (:userId, :firstName, :lastName, NULL, :heightFeet, :heightInches, NULL, NULL, :city, :state, :zipCode, :gym, 0, 0, NULL)", params) == 1;
 		                   // insert into profile (userId, firstName, lastName, image, heightFeet, heightInches, DOB, gender, city, state, zipCode, gym, level, experiencePoints, createTime) values (3,         'Matt',     'Messa', NULL,      6,           2,         NULL, NULL, 'chico' , 'ca', 95928, 'wrec', 0, 0, NULL);
 	}
 
-	public Weight getWeight(int userId) {
+	public Weight getWeight(int weightId) {
 		
 		
-		System.out.printf("dao id = %d", userId);
+		System.out.printf("dao id = %d", weightId);
 
-		MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
+		MapSqlParameterSource params = new MapSqlParameterSource("weightId", weightId);
 		
-		 return jdbc.queryForObject("select * from weight where weight.userId=:userId", params, new RowMapper<Weight>() {
+		 return jdbc.queryForObject("select * from weight where weight.weightId=:weightId", params, new RowMapper<Weight>() {
 
 			@Override
 			public Weight mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
 				Weight weight = new Weight();
+				weight.setWeightId(rs.getInt("weightId"));
 				weight.setUserId(rs.getInt("userId"));
 				weight.setWeight(rs.getDouble("weight"));
-				weight.setCreatedAtDate(rs.getDate("createdAtDate"));
+				weight.setCreateDate(rs.getString("createDate"));
 				
 				return weight;
 			}
@@ -66,14 +68,31 @@ public class WeightDao {
 	}
 	
 	public List<Weight> getWeights(int userId) {
+		System.out.println("im in here");
+		
+		MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
+		
+		return jdbc.query("select * from weight where weight.userId=:userId", params, new RowMapper<Weight>() {
 
-		return jdbc.query("select * from weight where weight.userId=:userId",
-						new MapSqlParameterSource("userId", userId), new WeightRowMapper());
+			@Override
+			public Weight mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Weight weight = new Weight();
+				System.out.printf("userId = %d\n", rs.getInt("userId"));
+				System.out.printf("rowNum = %d\n", rowNum);
+				weight.setWeightId(rs.getInt("weightId"));
+				weight.setUserId(rs.getInt("userId"));
+				weight.setWeight(rs.getDouble("weight"));
+				weight.setCreateDate(rs.getString("createDate"));
+				return weight;
+			}
+
+		});
 	}
 	
 	public boolean updateWeight(Weight weight) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(weight);
 
-		return jdbc.update("update weight set weight=:weight where userId=:userId", params) == 1;
+		return jdbc.update("update weight set weight=:weight where weightId=:weightId", params) == 1;
 	}
 }
