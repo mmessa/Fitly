@@ -51,7 +51,7 @@ public class WeightController {
 		return "createweight";
 	}
 	
-	@RequestMapping(value="/docreate", method=RequestMethod.POST)
+	@RequestMapping(value="/docreateweight", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid Weight weight, BindingResult result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		if(result.hasErrors()) {

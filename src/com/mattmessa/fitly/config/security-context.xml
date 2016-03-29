@@ -24,7 +24,7 @@
 		<security:intercept-url pattern="/loggedout" access="permitAll" />
 		<security:intercept-url pattern="/logout" access="permitAll" />
 		<security:intercept-url pattern="/newaccount" access="permitAll" />
-		<security:intercept-url pattern="/docreate" access="permitAll" />
+		<security:intercept-url pattern="/docreateweight" access="permitAll" />
 		<security:intercept-url pattern="/createprofile" access="permitAll" />
 		<security:intercept-url pattern="/profilecreated" access="permitAll" />
 		<security:intercept-url pattern="/createaccount" access="permitAll" />

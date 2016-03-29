@@ -12,7 +12,7 @@
 <body>
 	
 	<sf:form method="post"
-		action="${pageContext.request.contextPath}/docreate"
+		action="${pageContext.request.contextPath}/docreateweight"
 		commandName="weight">
 	<sf:input type="hidden" name="weightId" path="weightId"/>
 		<table>
