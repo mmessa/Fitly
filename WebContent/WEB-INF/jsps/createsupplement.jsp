@@ -12,19 +12,19 @@
 <body>
 	
 	<sf:form method="post"
-		action="${pageContext.request.contextPath}/docreateweight"
-		commandName="weight">
-	<sf:input type="hidden" name="weightId" path="weightId"/>
+		action="${pageContext.request.contextPath}/docreatesupplement"
+		commandName="supplement">
+	<sf:input type="hidden" name="supplementId" path="supplementId"/>
 		<table>
 			<tr>
-				<td class="label">Weight:</td>
-				<td><sf:input class="control" path="weight" name="weight" 
-						type="text" /><br /> <sf:errors path="weight" cssClass="error"></sf:errors></td>
+				<td class="label">Name:</td>
+				<td><sf:input class="control" path="name" name="name" 
+						type="text" /><br /> <sf:errors path="name" cssClass="error"></sf:errors></td>
 			</tr>
 			
 			<tr>
 				<td class="label"></td>
-				<td><input class="control" value="Create Weight" type="submit" /></td>
+				<td><input class="control" value="Create Supplement" type="submit" /></td>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</tr>
 		</table>

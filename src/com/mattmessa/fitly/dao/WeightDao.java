@@ -68,7 +68,7 @@ public class WeightDao {
 	}
 	
 	public List<Weight> getWeights(int userId) {
-		System.out.println("im in here");
+		System.out.println("im in here weights");
 		
 		MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
 		

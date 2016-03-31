@@ -14,6 +14,7 @@
 <a href="<c:url value='/home'/>">Home</a>
 </p>
 
+<h2>Profile</h2>
 First Name = <c:out value='${profile.firstName}' /><br>
 Last Name = <c:out value='${profile.lastName}' /><br>
 Image = <c:out value='${profile.image}' /><br>
@@ -33,6 +34,7 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <a href="<c:url value='editprofile'/>">Edit Profile</a>
 </p>
 
+<h2>Weight History</h2>
 <c:forEach var="row" items="${weights}">
 	weight: ${row.weight}<br/>
  	created date: ${row.createDate}<br/>
@@ -43,6 +45,14 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <a href="<c:url value='createweight'/>">Add Weight</a>
 </p>
 
+<h2>Supplements</h2>
+<c:forEach var="row" items="${supplements}">
+	name: ${row.name}<br/>
+    <br>
+</c:forEach>
+<p>
+<a href="<c:url value='createsupplement'/>">Add Supplement</a>
+</p>
 
 
 

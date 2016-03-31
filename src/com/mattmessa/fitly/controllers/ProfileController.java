@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Profile;
+import com.mattmessa.fitly.dao.Supplement;
 import com.mattmessa.fitly.dao.User;
 import com.mattmessa.fitly.dao.Weight;
 import com.mattmessa.fitly.service.ProfileService;
+import com.mattmessa.fitly.service.SupplementService;
 import com.mattmessa.fitly.service.UserService;
 import com.mattmessa.fitly.service.WeightService;
 
@@ -30,8 +32,13 @@ public class ProfileController {
 	private ProfileService profilesService;
 	private UserService usersService;
 	private WeightService weightsService;
+	private SupplementService supplementsService;
 	
-	
+	@Autowired
+	public void setSupplementsService(SupplementService supplementsService) {
+		this.supplementsService = supplementsService;
+	}
+
 	@Autowired
 	public void setWeightsService(WeightService weightsService) {
 		this.weightsService = weightsService;
@@ -55,10 +62,17 @@ public class ProfileController {
 		Profile profile = profilesService.getProfile(userId);
 		
 		List<Weight> weights = weightsService.getWeights(userId);
-		System.out.printf("size of list = %d\n", weights.size());
+		System.out.println("made it past weights\n");
+		
+		List<Supplement> supplements = supplementsService.getSupplements(userId);
+		System.out.println("made it past supplements\n");
 
 		model.addAttribute("profile", profile);
+		System.out.println("made it past model profile\n");
+
 		model.addAttribute("weights", weights);
+		model.addAttribute("supplements", supplements);
+
 		return "profile";
 	}
 	
