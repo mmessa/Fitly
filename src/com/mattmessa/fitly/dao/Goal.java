@@ -2,11 +2,33 @@ package com.mattmessa.fitly.dao;
 
 public class Goal {
 
+	private int goalId;
 	private int userId;
 	private String name;
-	private String description;
 	private int type;
+	private String description;
+	private double value;
+	private int complete;
 	
+	
+	public double getValue() {
+		return value;
+	}
+	public void setValue(double value) {
+		this.value = value;
+	}
+	public int getComplete() {
+		return complete;
+	}
+	public void setComplete(int complete) {
+		this.complete = complete;
+	}
+	public int getGoalId() {
+		return goalId;
+	}
+	public void setGoalId(int goalId) {
+		this.goalId = goalId;
+	}
 	public int getUserId() {
 		return userId;
 	}

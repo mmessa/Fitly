@@ -11,7 +11,6 @@ import com.mattmessa.fitly.dao.WeightDao;
 @Service("weightsService")
 public class WeightService {
 
-
 		private WeightDao weightDao;
 
 		@Autowired

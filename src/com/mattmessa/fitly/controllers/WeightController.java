@@ -15,32 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Weight;
-import com.mattmessa.fitly.service.ProfileService;
-import com.mattmessa.fitly.service.UserService;
 import com.mattmessa.fitly.service.WeightService;
 
 @Controller
 public class WeightController {
 	
-	private ProfileService profilesService;
-	private UserService usersService;
 	private WeightService weightsService;
 	
 	@Autowired
 	public void setWeightsService(WeightService weightsService) {
 		this.weightsService = weightsService;
 	}
-	
-	@Autowired
-	public void setProfilesService(ProfileService profilesService) {
-		this.profilesService = profilesService;
-	}
-	
-	@Autowired
-	public void setUsersService(UserService usersService) {
-		this.usersService = usersService;
-	}
-	
 	
 	@RequestMapping("/createweight")
 	public String createWeight(Model model, HttpServletRequest request) {
