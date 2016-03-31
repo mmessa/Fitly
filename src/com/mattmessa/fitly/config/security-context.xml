@@ -20,9 +20,11 @@
 		<security:intercept-url pattern="/editprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/createweight" access="isAuthenticated()" />
 		<security:intercept-url pattern="/creategoal" access="isAuthenticated()" />
+		<security:intercept-url pattern="/createbodyfat" access="isAuthenticated()" />
 		<security:intercept-url pattern="/createsupplement" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreateweight" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreategoal" access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreatebodyfat" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreatesupplement" access="isAuthenticated()" />	
 		<security:intercept-url pattern="/updateprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />

@@ -27,20 +27,20 @@ public class BodyFatController {
 		this.bodyFatsService = bodyFatsService;
 	}
 	
-	@RequestMapping("/createbodyFat")
+	@RequestMapping("/createbodyfat")
 	public String createBodyFat(Model model, HttpServletRequest request) {
 	
 		BodyFat bodyFat = new BodyFat();
 		model.addAttribute("bodyFat", bodyFat);
 		
-		return "createbodyFat";
+		return "createbodyfat";
 	}
 	
-	@RequestMapping(value="/docreatebodyFat", method=RequestMethod.POST)
+	@RequestMapping(value="/docreatebodyfat", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid BodyFat bodyFat, BindingResult result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		if(result.hasErrors()) {
-			return "createbodyFat";
+			return "createbodyfat";
 		}
 		
 		int userId = (int)request.getSession().getAttribute("userId");
@@ -55,7 +55,7 @@ public class BodyFatController {
 		return "profile";
 	}
 	
-	@RequestMapping("/editbodyFat") 
+	@RequestMapping("/editbodyfat") 
 	public String showEditBodyFat(Model model, HttpServletRequest request){
 		
 		int userId = (int)request.getSession().getAttribute("userId");
@@ -63,6 +63,6 @@ public class BodyFatController {
 		System.out.printf("userId =  %d\n", bodyFat.getUserId());
 		model.addAttribute("bodyFat", bodyFat);
 			
-		return "editbodyFat";
+		return "editbodyfat";
 	}
 }

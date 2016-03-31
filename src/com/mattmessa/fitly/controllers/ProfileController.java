@@ -16,11 +16,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mattmessa.fitly.dao.BodyFat;
 import com.mattmessa.fitly.dao.Goal;
 import com.mattmessa.fitly.dao.Profile;
 import com.mattmessa.fitly.dao.Supplement;
 import com.mattmessa.fitly.dao.User;
 import com.mattmessa.fitly.dao.Weight;
+import com.mattmessa.fitly.service.BodyFatService;
 import com.mattmessa.fitly.service.GoalService;
 import com.mattmessa.fitly.service.ProfileService;
 import com.mattmessa.fitly.service.SupplementService;
@@ -36,7 +38,13 @@ public class ProfileController {
 	private WeightService weightsService;
 	private SupplementService supplementsService;
 	private GoalService goalsService;
+	private BodyFatService bodyFatsService;
 	
+	@Autowired
+	public void setBodyFatsService(BodyFatService bodyFatsService) {
+		this.bodyFatsService = bodyFatsService;
+	}
+
 	@Autowired
 	public void setGoalsService(GoalService goalsService) {
 		this.goalsService = goalsService;
@@ -71,10 +79,12 @@ public class ProfileController {
 		
 		List<Weight> weights = weightsService.getWeights(userId);
 		List<Goal> goals = goalsService.getGoals(userId);
+		List<BodyFat> bodyFats = bodyFatsService.getBodyFats(userId);
 		List<Supplement> supplements = supplementsService.getSupplements(userId);
 
 		model.addAttribute("profile", profile);
 		model.addAttribute("goals", goals);
+		model.addAttribute("bodyFats", bodyFats);
 		model.addAttribute("weights", weights);
 		model.addAttribute("supplements", supplements);
 

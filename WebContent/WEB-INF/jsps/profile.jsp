@@ -45,6 +45,17 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <a href="<c:url value='createweight'/>">Add Weight</a>
 </p>
 
+<h2>Body Fat History</h2>
+<c:forEach var="row" items="${bodyFats}">
+	weight: ${row.bodyFatPercentage}<br/>
+ 	created date: ${row.createDate}<br/>
+    <br>
+</c:forEach>
+
+<p>
+<a href="<c:url value='createbodyfat'/>">Add Body Fat%</a>
+</p>
+
 <h2>Supplements</h2>
 <c:forEach var="row" items="${supplements}">
 	name: ${row.name}<br/>
