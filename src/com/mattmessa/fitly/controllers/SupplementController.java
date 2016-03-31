@@ -15,33 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Supplement;
-import com.mattmessa.fitly.dao.Weight;
-import com.mattmessa.fitly.service.ProfileService;
 import com.mattmessa.fitly.service.SupplementService;
-import com.mattmessa.fitly.service.UserService;
-import com.mattmessa.fitly.service.WeightService;
 
 @Controller
 public class SupplementController {
-	private ProfileService profilesService;
-	private UserService usersService;
+	
 	private SupplementService supplementsService;
 	
 	@Autowired
 	public void setSupplementsService(SupplementService supplementsService) {
 		this.supplementsService = supplementsService;
 	}
-	
-	@Autowired
-	public void setProfilesService(ProfileService profilesService) {
-		this.profilesService = profilesService;
-	}
-	
-	@Autowired
-	public void setUsersService(UserService usersService) {
-		this.usersService = usersService;
-	}
-	
 	
 	@RequestMapping("/createsupplement")
 	public String createSupplement(Model model, HttpServletRequest request) {
