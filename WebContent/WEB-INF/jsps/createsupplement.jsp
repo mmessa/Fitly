@@ -25,7 +25,6 @@
 			<tr>
 				<td class="label"></td>
 				<td><input class="control" value="Create Supplement" type="submit" /></td>
-				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</tr>
 		</table>
 
