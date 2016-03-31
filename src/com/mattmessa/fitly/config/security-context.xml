@@ -19,14 +19,17 @@
 		<security:intercept-url pattern="/profile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/editprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/createweight" access="isAuthenticated()" />
+		<security:intercept-url pattern="/creategoal" access="isAuthenticated()" />
 		<security:intercept-url pattern="/createsupplement" access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreateweight" access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreategoal" access="isAuthenticated()" />
+		<security:intercept-url pattern="/docreatesupplement" access="isAuthenticated()" />	
 		<security:intercept-url pattern="/updateprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/loggedout" access="permitAll" />
 		<security:intercept-url pattern="/logout" access="permitAll" />
 		<security:intercept-url pattern="/newaccount" access="permitAll" />
-		<security:intercept-url pattern="/docreateweight" access="permitAll" />
-		<security:intercept-url pattern="/docreatesupplement" access="permitAll" />		
+			
 		<security:intercept-url pattern="/createprofile" access="permitAll" />
 		<security:intercept-url pattern="/profilecreated" access="permitAll" />
 		<security:intercept-url pattern="/createaccount" access="permitAll" />

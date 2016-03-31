@@ -54,6 +54,18 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <a href="<c:url value='createsupplement'/>">Add Supplement</a>
 </p>
 
+<h2>Goals</h2>
+<c:forEach var="row" items="${goals}">
+	Goal: ${row.name}<br/>
+	Type: ${row.type}<br/>
+	Description: ${row.description}<br/>
+	Value: ${row.value}<br/>
+	Complete: ${row.complete}<br/>
+    <br>
+</c:forEach>
+<p>
+<a href="<c:url value='creategoal'/>">Add Goal</a>
+</p>
 
 
 </body>
