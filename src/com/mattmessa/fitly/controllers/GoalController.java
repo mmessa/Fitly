@@ -19,6 +19,8 @@ import com.mattmessa.fitly.service.GoalService;
 
 @Controller
 public class GoalController {
+	
+	private GoalService goalsService;
 
 	@Autowired
 	public void setGoalsService(GoalService goalsService) {
