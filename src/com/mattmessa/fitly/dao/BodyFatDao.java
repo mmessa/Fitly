@@ -24,7 +24,6 @@ public class BodyFatDao {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 	
-	@Transactional
 	public boolean create(BodyFat bodyFat) {
 		/*
 	    SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");      

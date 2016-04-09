@@ -33,69 +33,208 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <p>
 <a href="<c:url value='editprofile'/>">Edit Profile</a>
 </p>
-
 <h2>Weight History</h2>
-<c:forEach var="row" items="${weights}">
-	weight: ${row.weight}<br/>
- 	created date: ${row.createDate}<br/>
- 	<form action="createweight" method="post">
-  		<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Edit</button>
-  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	</form>
-	<form action="deleteweight" method="post">
-  		<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Delete</button>
-  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	</form>
-    <br>
-</c:forEach>
+<table>
+	<thead>
+		<tr>
+			<th>Weight</th>
+			<th>Date</th>
+			<th colspan="4"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${weights}">
+		<tr>
+			<td>${row.weight}</td>
+			<td>${row.createDate}</td>
+			<td>
+				<form action="createweight" method="post">
+  					<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Edit</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+			<td>
+				<form action="deleteweight" method="post">
+  					<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td>
+				<form action="createweight" method="post">
+  					<button type="submit" class="btn-link">Add Weight</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-<p>
-<a href="<c:url value='createweight'/>">Add Weight</a>
-</p>
 
 <h2>Updates</h2>
-<c:forEach var="row" items="${updates}">
-	notes: ${row.notes}<br/>
- 	created date: ${row.createDate}<br/>
-    <br>
-</c:forEach>
+<table>
+	<thead>
+		<tr>
+			<th>Notes</th>
+			<th>Date</th>
+			<th colspan="4"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${updates}">
+		<tr>
+			<td>${row.notes}</td>
+			<td>${row.createDate}</td>
+			<td>
+				<form action="createupdate" method="post">
+  					<button type="submit" name="updateId" value="${row.updateId}" class="btn-link">Edit</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+			<td>
+				<form action="deleteupdate" method="post">
+  					<button type="submit" name="updateId" value="${row.updateId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td>
+				<form action="createupdate" method="post">
+  					<button type="submit" class="btn-link">Add Update</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-<p>
-<a href="<c:url value='createupdate'/>">Add Update</a>
-</p>
 
 <h2>Body Fat History</h2>
-<c:forEach var="row" items="${bodyFats}">
-	weight: ${row.bodyFatPercentage}<br/>
- 	created date: ${row.createDate}<br/>
-    <br>
-</c:forEach>
+<table>
+	<thead>
+		<tr>
+			<th>Body Fat%</th>
+			<th>Date</th>
+			<th colspan="4"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${bodyFats}">
+		<tr>
+			<td>${row.bodyFatPercentage}</td>
+			<td>${row.createDate}</td>
+			<td>
+				<form action="createbodyfat" method="post">
+  					<button type="submit" name="bodyFatId" value="${row.bodyFatId}" class="btn-link">Edit</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+			<td>
+				<form action="deletebodyfat" method="post">
+  					<button type="submit" name="weightId" value="${row.bodyFatId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td>
+				<form action="createbodyfat" method="post">
+  					<button type="submit" class="btn-link">Add Body Fat%</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-<p>
-<a href="<c:url value='createbodyfat'/>">Add Body Fat%</a>
-</p>
 
 <h2>Supplements</h2>
-<c:forEach var="row" items="${supplements}">
-	name: ${row.name}<br/>
-    <br>
-</c:forEach>
-<p>
-<a href="<c:url value='createsupplement'/>">Add Supplement</a>
-</p>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${supplements}">
+		<tr>
+			<td>${row.name}</td>
+			<td>
+				<form action="createsupplement" method="post">
+  					<button type="submit" name="supplementId" value="${row.supplementId}" class="btn-link">Edit</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+			<td>
+				<form action="deletesupplement" method="post">
+  					<button type="submit" name="supplementId" value="${row.supplementId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td>
+				<form action="createsupplement" method="post">
+  					<button type="submit" class="btn-link">Add Supplement</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
 <h2>Goals</h2>
-<c:forEach var="row" items="${goals}">
-	Goal: ${row.name}<br/>
-	Type: ${row.type}<br/>
-	Description: ${row.description}<br/>
-	Value: ${row.value}<br/>
-	Complete: ${row.complete}<br/>
-    <br>
-</c:forEach>
-<p>
-<a href="<c:url value='creategoal'/>">Add Goal</a>
-</p>
+<table>
+	<thead>
+		<tr>
+			<th>Goal</th>
+			<th>Type</th>
+			<th>Description</th>
+			<th>Value</th>
+			<th>Complete</th>
+			<th colspan="7"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${goals}">
+		<tr>
+			<td>${row.name}</td>
+			<td>${row.type}</td>
+			<td>${row.description}</td>
+			<td>${row.value}</td>
+			<td>${row.complete}</td>
+			<td>
+				<form action="creategoal" method="post">
+  					<button type="submit" name="goalId" value="${row.goalId}" class="btn-link">Edit</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+			<td>
+				<form action="deletegoal" method="post">
+  					<button type="submit" name="goalId" value="${row.goalId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td>
+				<form action="creategoal" method="post">
+  					<button type="submit" class="btn-link">Add Goal</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 
 </body>
