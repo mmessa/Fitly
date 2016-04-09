@@ -59,5 +59,11 @@ public class WeightService {
 			}
 			
 		}
+
+		public void deleteWeight(int weightId) {
+				
+				weightDao.deleteWeight(weightId);
+				return;
+		}
 	
 }

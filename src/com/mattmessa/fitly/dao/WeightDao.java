@@ -98,4 +98,11 @@ public class WeightDao {
 
 		return jdbc.update("update weight set weight=:weight where weightId=:weightId", params) == 1;
 	}
+
+	public boolean deleteWeight(int weightId) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource("weightId", weightId);
+
+		return jdbc.update("delete from weight where weightId=:weightId", params) == 1;
+	}
 }

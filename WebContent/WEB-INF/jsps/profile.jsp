@@ -38,7 +38,14 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <c:forEach var="row" items="${weights}">
 	weight: ${row.weight}<br/>
  	created date: ${row.createDate}<br/>
- 	<a href="<c:url value='createweight?weightId=${row.weightId}'/>">Edit</a><br/>
+ 	<form action="createweight" method="post">
+  		<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Edit</button>
+  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>
+	<form action="deleteweight" method="post">
+  		<button type="submit" name="weightId" value="${row.weightId}" class="btn-link">Delete</button>
+  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>
     <br>
 </c:forEach>
 

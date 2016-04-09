@@ -66,15 +66,13 @@ public class WeightController {
 		return "profile";
 	}
 	
-	@RequestMapping("/editweight") 
-	public String showEditWeight(Model model, HttpServletRequest request){
+	@RequestMapping("/deleteweight") 
+	public String deleteWeight(Model model, HttpServletRequest request){
 		
 		int weightId = Integer.parseInt(request.getParameter("weightId"));
-		Weight weight = weightsService.getWeight(weightId);
-		System.out.printf("userId =  %d\n", weight.getUserId());
-		model.addAttribute("weight", weight);
-			
-		return "createweight";
+		weightsService.deleteWeight(weightId);
+		
+		return "redirect:profile";
 	}
 	
 }

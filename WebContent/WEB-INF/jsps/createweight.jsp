@@ -24,7 +24,7 @@
 			
 			<tr>
 				<td class="label"></td>
-				<td><input class="control" value="Create Weight" type="submit" /></td>
+				<td><input class="control" value="Submit" type="submit" /></td>
 				
 			</tr>
 		</table>
