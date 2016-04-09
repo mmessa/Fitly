@@ -6,10 +6,20 @@ public class Update {
 
 	private int updateId;
 	private int userId;
-	private String name;
 	private String notes;
-	private Date createdAtDate;
+	private String createDate;
 	
+	public Update(int updateId, int userId, String name, String notes, String createDate) {
+		super();
+		this.updateId = updateId;
+		this.userId = userId;
+		this.notes = notes;
+		this.createDate = createDate;
+	}
+	
+	public Update() {
+	}
+
 	public int getUpdateId() {
 		return updateId;
 	}
@@ -22,23 +32,17 @@ public class Update {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getNotes() {
 		return notes;
 	}
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	public Date getCreatedAtDate() {
-		return createdAtDate;
+	public String getCreateDate() {
+		return createDate;
 	}
-	public void setCreatedAtDate(Date createdAtDate) {
-		this.createdAtDate = createdAtDate;
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
 	}
 	
 	

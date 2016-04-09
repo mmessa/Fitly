@@ -31,6 +31,17 @@ public class WeightController {
 	public String createWeight(Model model, HttpServletRequest request) {
 	
 		Weight weight = new Weight();
+		int weightId = 0;
+		
+		if (request.getParameter("weightId") != null)
+		{
+			weightId = Integer.parseInt(request.getParameter("weightId"));
+		}
+		if (weightId != 0)
+		{
+			weight = weightsService.getWeight(weightId);
+		}
+		
 		model.addAttribute("weight", weight);
 		
 		return "createweight";
@@ -58,12 +69,12 @@ public class WeightController {
 	@RequestMapping("/editweight") 
 	public String showEditWeight(Model model, HttpServletRequest request){
 		
-		int userId = (int)request.getSession().getAttribute("userId");
-		Weight weight = weightsService.getWeight(userId);
+		int weightId = Integer.parseInt(request.getParameter("weightId"));
+		Weight weight = weightsService.getWeight(weightId);
 		System.out.printf("userId =  %d\n", weight.getUserId());
 		model.addAttribute("weight", weight);
 			
-		return "editweight";
+		return "createweight";
 	}
 	
 }

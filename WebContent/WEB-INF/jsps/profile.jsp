@@ -38,11 +38,23 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 <c:forEach var="row" items="${weights}">
 	weight: ${row.weight}<br/>
  	created date: ${row.createDate}<br/>
+ 	<a href="<c:url value='createweight?weightId=${row.weightId}'/>">Edit</a><br/>
     <br>
 </c:forEach>
 
 <p>
 <a href="<c:url value='createweight'/>">Add Weight</a>
+</p>
+
+<h2>Updates</h2>
+<c:forEach var="row" items="${updates}">
+	notes: ${row.notes}<br/>
+ 	created date: ${row.createDate}<br/>
+    <br>
+</c:forEach>
+
+<p>
+<a href="<c:url value='createupdate'/>">Add Update</a>
 </p>
 
 <h2>Body Fat History</h2>

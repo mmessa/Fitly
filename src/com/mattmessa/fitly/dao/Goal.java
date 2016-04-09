@@ -11,6 +11,21 @@ public class Goal {
 	private int complete;
 	
 	
+	
+	public Goal() {
+	}
+
+	public Goal(int goalId, int userId, String name, int type, String description, double value, int complete) {
+		super();
+		this.goalId = goalId;
+		this.userId = userId;
+		this.name = name;
+		this.type = type;
+		this.description = description;
+		this.value = value;
+		this.complete = complete;
+	}
+	
 	public double getValue() {
 		return value;
 	}

@@ -31,6 +31,7 @@ public class User {
 	}
 	
 	public User(int userId, String username, String password, boolean enabled, String authority, String email) {
+		super();
 		this.userId = userId;
 		this.username = username;
 		this.password = password;

@@ -20,12 +20,14 @@ import com.mattmessa.fitly.dao.BodyFat;
 import com.mattmessa.fitly.dao.Goal;
 import com.mattmessa.fitly.dao.Profile;
 import com.mattmessa.fitly.dao.Supplement;
+import com.mattmessa.fitly.dao.Update;
 import com.mattmessa.fitly.dao.User;
 import com.mattmessa.fitly.dao.Weight;
 import com.mattmessa.fitly.service.BodyFatService;
 import com.mattmessa.fitly.service.GoalService;
 import com.mattmessa.fitly.service.ProfileService;
 import com.mattmessa.fitly.service.SupplementService;
+import com.mattmessa.fitly.service.UpdateService;
 import com.mattmessa.fitly.service.UserService;
 import com.mattmessa.fitly.service.WeightService;
 
@@ -39,10 +41,16 @@ public class ProfileController {
 	private SupplementService supplementsService;
 	private GoalService goalsService;
 	private BodyFatService bodyFatsService;
+	private UpdateService updatesService;
 	
 	@Autowired
 	public void setBodyFatsService(BodyFatService bodyFatsService) {
 		this.bodyFatsService = bodyFatsService;
+	}
+	
+	@Autowired
+	public void setUpdatesService(UpdateService updatesService) {
+		this.updatesService = updatesService;
 	}
 
 	@Autowired
@@ -78,11 +86,13 @@ public class ProfileController {
 		Profile profile = profilesService.getProfile(userId);
 		
 		List<Weight> weights = weightsService.getWeights(userId);
+		List<Update> updates = updatesService.getUpdates(userId);
 		List<Goal> goals = goalsService.getGoals(userId);
 		List<BodyFat> bodyFats = bodyFatsService.getBodyFats(userId);
 		List<Supplement> supplements = supplementsService.getSupplements(userId);
 
 		model.addAttribute("profile", profile);
+		model.addAttribute("updates", updates);
 		model.addAttribute("goals", goals);
 		model.addAttribute("bodyFats", bodyFats);
 		model.addAttribute("weights", weights);

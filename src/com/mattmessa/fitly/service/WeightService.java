@@ -48,15 +48,15 @@ public class WeightService {
 		}
 		
 		public void saveOrUpdate(Weight weight) {
-			/*
-			if(weight.getUserId() != 0) {
+			
+			if(weight.getWeightId() != 0) {
 				weightDao.updateWeight(weight);
 			}
 			
 			else {
-			*/
+			
 				weightDao.create(weight);
-			//}
+			}
 			
 		}
 	

@@ -6,6 +6,16 @@ public class Supplement {
 	private int userId;
 	private String name;
 	
+	
+	
+	public Supplement() {
+	}
+	public Supplement(int supplementId, int userId, String name) {
+		super();
+		this.supplementId = supplementId;
+		this.userId = userId;
+		this.name = name;
+	}
 	public int getSupplementId() {
 		return supplementId;
 	}

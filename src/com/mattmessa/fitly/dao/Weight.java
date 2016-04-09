@@ -3,9 +3,28 @@ package com.mattmessa.fitly.dao;
 public class Weight {
 	private int weightId;
 	private int userId;
+	private int updateId;
 	private String createDate;
 	private double weight;
 	
+	public Weight() {
+		this.updateId = 0;
+	}
+	
+	public Weight(int weightId, int userId, int updateId, String createDate, double weight) {
+		super();
+		this.weightId = weightId;
+		this.userId = userId;
+		this.updateId = updateId;
+		this.createDate = createDate;
+		this.weight = weight;
+	}
+	public int getUpdateId() {
+		return updateId;
+	}
+	public void setUpdateId(int updateId) {
+		this.updateId = updateId;
+	}
 	public int getWeightId() {
 		return weightId;
 	}

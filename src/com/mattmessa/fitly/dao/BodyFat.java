@@ -7,6 +7,18 @@ public class BodyFat {
 	private String createDate;
 	private double bodyFatPercentage;
 	
+	
+	public BodyFat() {
+	}
+
+	public BodyFat(int bodyFatId, int userId, String createDate, double bodyFatPercentage) {
+		super();
+		this.bodyFatId = bodyFatId;
+		this.userId = userId;
+		this.createDate = createDate;
+		this.bodyFatPercentage = bodyFatPercentage;
+	}
+	
 	public int getBodyFatId() {
 		return bodyFatId;
 	}
