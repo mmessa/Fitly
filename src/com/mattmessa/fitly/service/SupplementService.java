@@ -49,15 +49,20 @@ public class SupplementService {
 	}
 	
 	public void saveOrUpdate(Supplement supplement) {
-		/*
-		if(supplement.getUserId() != 0) {
+
+		if(supplement.getSupplementId() != 0) {
 			supplementDao.updateSupplement(supplement);
 		}
 		
 		else {
-		*/
-			supplementDao.create(supplement);
-		//}
 		
+			supplementDao.create(supplement);
+		}
+		
+	}
+
+	public void deleteSupplement(int supplementId) {
+		
+		supplementDao.deleteSupplement(supplementId);
 	}
 }

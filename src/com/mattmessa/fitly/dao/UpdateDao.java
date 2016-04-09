@@ -97,4 +97,10 @@ public class UpdateDao {
 
 		return jdbc.update("update updates set notes=:notes where updateId=:updateId", params) == 1;
 	}
+
+	public boolean deleteUpdate(int updateId) {
+		MapSqlParameterSource params = new MapSqlParameterSource("updateId", updateId);
+
+		return jdbc.update("delete from updates where updateId=:updateId", params) == 1;		
+	}
 }

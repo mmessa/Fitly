@@ -31,6 +31,17 @@ private UpdateService updatesService;
 	public String createUpdate(Model model, HttpServletRequest request) {
 	
 		Update update = new Update();
+		int updateId = 0;
+		
+		if (request.getParameter("updateId") != null)
+		{
+			updateId = Integer.parseInt(request.getParameter("updateId"));
+		}
+		if (updateId != 0)
+		{
+			update = updatesService.getUpdate(updateId);
+		}
+		
 		model.addAttribute("update", update);
 		
 		return "createupdate";
@@ -55,14 +66,12 @@ private UpdateService updatesService;
 		return "profile";
 	}
 	
-	@RequestMapping("/editupdate") 
-	public String showEditUpdate(Model model, HttpServletRequest request){
+	@RequestMapping("/deleteupdate") 
+	public String deleteUpdate(Model model, HttpServletRequest request){
 		
-		int userId = (int)request.getSession().getAttribute("userId");
-		Update update = updatesService.getUpdate(userId);
-		System.out.printf("userId =  %d\n", update.getUserId());
-		model.addAttribute("update", update);
-			
-		return "editupdate";
+		int updateId = Integer.parseInt(request.getParameter("updateId"));
+		updatesService.deleteUpdate(updateId);
+		
+		return "redirect:profile";
 	}
 }

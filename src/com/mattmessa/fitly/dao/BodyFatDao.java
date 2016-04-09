@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component("BodyFatDAO")
 public class BodyFatDao {
@@ -91,4 +90,12 @@ public class BodyFatDao {
 
 		return jdbc.update("update bodyFat set bodyFatPercentage=:bodyFatPercentage where bodyFatId=:bodyFatId", params) == 1;
 	}
+	
+	public boolean deleteBodyFat(int bodyFatId) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource("bodyFatId", bodyFatId);
+
+		return jdbc.update("delete from bodyFat where bodyFatId=:bodyFatId", params) == 1;
+	}
+	
 }

@@ -95,4 +95,10 @@ public class SupplementDao {
 
 		return jdbc.update("update supplement set name=:name where supplementId=:supplementId", params) == 1;
 	}
+
+	public boolean deleteSupplement(int supplementId) {
+		MapSqlParameterSource params = new MapSqlParameterSource("supplementId", supplementId);
+
+		return jdbc.update("delete from supplement where supplementId=:supplementId", params) == 1;		
+	}
 }

@@ -48,15 +48,20 @@ public class GoalService {
 	}
 	
 	public void saveOrUpdate(Goal goal) {
-		/*
-		if(goal.getUserId() != 0) {
+		
+		if(goal.getGoalId() != 0) {
 			goalDao.updateGoal(goal);
 		}
 		
 		else {
-		*/
+		
 			goalDao.create(goal);
-		//}
+		}
+		
+	}
+
+	public void deleteGoal(int goalId) {
+		goalDao.deleteGoal(goalId);
 		
 	}
 }

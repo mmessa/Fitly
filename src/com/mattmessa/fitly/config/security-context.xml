@@ -30,12 +30,15 @@
 		<security:intercept-url pattern="/docreatebodyfat" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreatesupplement" access="isAuthenticated()" />
 		<security:intercept-url pattern="/deleteweight" access="isAuthenticated()" />
+		<security:intercept-url pattern="/deletebodyfat" access="isAuthenticated()" />
+		<security:intercept-url pattern="/deleteupdate" access="isAuthenticated()" />
+		<security:intercept-url pattern="/deletesupplement" access="isAuthenticated()" />
+		<security:intercept-url pattern="/deletegoal" access="isAuthenticated()" />
 		<security:intercept-url pattern="/updateprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/loggedout" access="permitAll" />
 		<security:intercept-url pattern="/logout" access="permitAll" />
 		<security:intercept-url pattern="/newaccount" access="permitAll" />
-			
 		<security:intercept-url pattern="/createprofile" access="permitAll" />
 		<security:intercept-url pattern="/profilecreated" access="permitAll" />
 		<security:intercept-url pattern="/createaccount" access="permitAll" />

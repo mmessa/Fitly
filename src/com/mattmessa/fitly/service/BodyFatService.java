@@ -48,15 +48,19 @@ public class BodyFatService {
 	}
 	
 	public void saveOrUpdate(BodyFat bodyFat) {
-		/*
-		if(bodyFat.getUserId() != 0) {
+		
+		if(bodyFat.getBodyFatId() != 0) {
 			bodyFatDao.updateBodyFat(bodyFat);
 		}
 		
 		else {
-		*/
 			bodyFatDao.create(bodyFat);
-		//}
+		}
+		
+	}
+
+	public void deleteBodyFat(int bodyFatId) {
+		bodyFatDao.deleteBodyFat(bodyFatId);
 		
 	}
 }

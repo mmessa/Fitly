@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Supplement;
+import com.mattmessa.fitly.dao.Supplement;
 import com.mattmessa.fitly.service.SupplementService;
 
 @Controller
@@ -31,6 +32,17 @@ public class SupplementController {
 	public String createSupplement(Model model, HttpServletRequest request) {
 	
 		Supplement supplement = new Supplement();
+		int supplementId = 0;
+		
+		if (request.getParameter("supplementId") != null)
+		{
+			supplementId = Integer.parseInt(request.getParameter("supplementId"));
+		}
+		if (supplementId != 0)
+		{
+			supplement = supplementsService.getSupplement(supplementId);
+		}
+		
 		model.addAttribute("supplement", supplement);
 		
 		return "createsupplement";
@@ -55,14 +67,12 @@ public class SupplementController {
 		return "profile";
 	}
 	
-	@RequestMapping("/editsupplement") 
-	public String showEditSupplement(Model model, HttpServletRequest request){
+	@RequestMapping("/deletesupplement") 
+	public String deleteSupplement(Model model, HttpServletRequest request){
 		
-		int userId = (int)request.getSession().getAttribute("userId");
-		Supplement supplement = supplementsService.getSupplement(userId);
-		System.out.printf("userId =  %d\n", supplement.getUserId());
-		model.addAttribute("supplement", supplement);
-			
-		return "editsupplement";
+		int supplementId = Integer.parseInt(request.getParameter("supplementId"));
+		supplementsService.deleteSupplement(supplementId);
+		
+		return "redirect:profile";
 	}
 }

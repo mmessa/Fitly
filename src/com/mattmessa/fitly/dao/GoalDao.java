@@ -102,4 +102,10 @@ public class GoalDao {
 
 		return jdbc.update("update goal set name=:name, type=:type, description=:description, value=:value, complete=:complete where goalId=:goalId", params) == 1;
 	}
+
+	public boolean deleteGoal(int goalId) {
+		MapSqlParameterSource params = new MapSqlParameterSource("goalId", goalId);
+
+		return jdbc.update("delete from goal where goalId=:goalId", params) == 1;
+	}
 }

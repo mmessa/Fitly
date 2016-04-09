@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.BodyFat;
+import com.mattmessa.fitly.dao.BodyFat;
 import com.mattmessa.fitly.service.BodyFatService;
 
 @Controller
@@ -31,6 +32,17 @@ public class BodyFatController {
 	public String createBodyFat(Model model, HttpServletRequest request) {
 	
 		BodyFat bodyFat = new BodyFat();
+		int bodyFatId = 0;
+		
+		if (request.getParameter("bodyFatId") != null)
+		{
+			bodyFatId = Integer.parseInt(request.getParameter("bodyFatId"));
+		}
+		if (bodyFatId != 0)
+		{
+			bodyFat = bodyFatsService.getBodyFat(bodyFatId);
+		}
+		
 		model.addAttribute("bodyFat", bodyFat);
 		
 		return "createbodyfat";
@@ -55,14 +67,12 @@ public class BodyFatController {
 		return "profile";
 	}
 	
-	@RequestMapping("/editbodyfat") 
-	public String showEditBodyFat(Model model, HttpServletRequest request){
+	@RequestMapping("/deletebodyfat") 
+	public String deleteBodyFat(Model model, HttpServletRequest request){
 		
-		int userId = (int)request.getSession().getAttribute("userId");
-		BodyFat bodyFat = bodyFatsService.getBodyFat(userId);
-		System.out.printf("userId =  %d\n", bodyFat.getUserId());
-		model.addAttribute("bodyFat", bodyFat);
-			
-		return "editbodyfat";
+		int bodyFatId = Integer.parseInt(request.getParameter("bodyFatId"));
+		bodyFatsService.deleteBodyFat(bodyFatId);
+		
+		return "redirect:profile";
 	}
 }

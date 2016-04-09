@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Goal;
+import com.mattmessa.fitly.dao.Goal;
 import com.mattmessa.fitly.service.GoalService;
 
 @Controller
@@ -31,6 +32,17 @@ public class GoalController {
 	public String createGoal(Model model, HttpServletRequest request) {
 	
 		Goal goal = new Goal();
+		int goalId = 0;
+		
+		if (request.getParameter("goalId") != null)
+		{
+			goalId = Integer.parseInt(request.getParameter("goalId"));
+		}
+		if (goalId != 0)
+		{
+			goal = goalsService.getGoal(goalId);
+		}
+		
 		model.addAttribute("goal", goal);
 		
 		return "creategoal";
@@ -64,5 +76,14 @@ public class GoalController {
 		model.addAttribute("goal", goal);
 			
 		return "editgoal";
+	}
+	
+	@RequestMapping("/deletegoal") 
+	public String deleteGoal(Model model, HttpServletRequest request){
+		
+		int goalId = Integer.parseInt(request.getParameter("goalId"));
+		goalsService.deleteGoal(goalId);
+		
+		return "redirect:profile";
 	}
 }

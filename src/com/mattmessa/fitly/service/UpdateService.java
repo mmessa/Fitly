@@ -48,16 +48,19 @@ public class UpdateService {
 	}
 	
 	public void saveOrUpdate(Update update) {
-		/*
-		if(update.getUserId() != 0) {
+		
+		if(update.getUpdateId() != 0) {
 			updateDao.updateUpdate(update);
 		}
 		
 		else {
-		*/
 			updateDao.create(update);
-		//}
+		}
 		
+	}
+
+	public void deleteUpdate(int updateId) {
+		updateDao.deleteUpdate(updateId);
 	}
 
 }

@@ -11,7 +11,7 @@
 
 
 <p>
-<a href="<c:url value='/home'/>">Home</a>
+<a href="<c:url value='/'/>">Home</a>
 </p>
 
 <h2>Profile</h2>
@@ -135,7 +135,7 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 			</td>
 			<td>
 				<form action="deletebodyfat" method="post">
-  					<button type="submit" name="weightId" value="${row.bodyFatId}" class="btn-link">Delete</button>
+  					<button type="submit" name="bodyFatId" value="${row.bodyFatId}" class="btn-link">Delete</button>
   					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 			</td>
