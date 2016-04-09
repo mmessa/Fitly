@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `FitlyDB`.`challenge` (
   `description` VARCHAR(200) NULL DEFAULT NULL,
   `coinsGiven` INT NULL DEFAULT NULL,
   `experienceGiven` INT(11) NULL DEFAULT NULL,
-  `type` CHAR(1) NULL DEFAULT NULL,
+  `type` INT NULL DEFAULT NULL,
   PRIMARY KEY (`challengeId`),
   UNIQUE INDEX `challengeId_UNIQUE` (`challengeId` ASC))
 ENGINE = InnoDB
