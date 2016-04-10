@@ -24,7 +24,9 @@
 
 
 <a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
+<br><br>
 
+<a href="<c:url value='/challenges'/>">Challenges</a>
 <p>
 <a href="<c:url value='/editprofile'/>">Edit Profile</a>
 </p>

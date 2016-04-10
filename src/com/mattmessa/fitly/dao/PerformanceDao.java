@@ -24,11 +24,7 @@ public class PerformanceDao {
 	
 	@Transactional
 	public boolean create(Performance performance) {
-		/*
-	    SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");      
-	    Date currentDate = sdf.parse(sdf.format(new Date()));		
-			
-	*/
+		
 		MapSqlParameterSource params = new MapSqlParameterSource();
 	    //BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 	    
