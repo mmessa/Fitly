@@ -236,6 +236,43 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 	</tbody>
 </table>
 
+<h2>My Challenges</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Level</th>
+			<th>Description</th>
+			<th>Coins Given</th>
+			<th>Experience Given</th>
+			<th>Started Date</th>
+			<th>Completed Date</th>
+			<th>Completed</th>
+			<th colspan="9"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="row" items="${performances}">
+		<tr>
+			<td>${row.name}</td>
+			<td>${row.level}</td>
+			<td>${row.description}</td>
+			<td>${row.coinsGiven}</td>
+			<td>${row.experienceGiven}</td>
+			<td>${row.startedDate}</td>			
+			<td>${row.completedDate}</td>
+			<td>${row.complete}</td>
+			<td>
+				<form action="deleteperformance" method="post">
+  					<button type="submit" name="performanceId" value="${row.performanceId}" class="btn-link">Delete</button>
+  					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+			</td>
+		</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
 
 </body>
 </html>

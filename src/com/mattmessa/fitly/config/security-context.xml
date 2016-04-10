@@ -33,6 +33,7 @@
 		<security:intercept-url pattern="/deletebodyfat" access="isAuthenticated()" />
 		<security:intercept-url pattern="/deleteupdate" access="isAuthenticated()" />
 		<security:intercept-url pattern="/deletesupplement" access="isAuthenticated()" />
+		<security:intercept-url pattern="/deleteperformance" access="isAuthenticated()" />
 		<security:intercept-url pattern="/deletegoal" access="isAuthenticated()" />
 		<security:intercept-url pattern="/updateprofile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/" access="permitAll" />
