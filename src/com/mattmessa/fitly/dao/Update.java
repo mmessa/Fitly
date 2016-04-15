@@ -1,7 +1,5 @@
 package com.mattmessa.fitly.dao;
 
-import java.util.Date;
-
 public class Update {
 
 	private int updateId;

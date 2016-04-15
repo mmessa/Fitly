@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Goal;
-import com.mattmessa.fitly.dao.Goal;
 import com.mattmessa.fitly.service.GoalService;
 
 @Controller
