@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
@@ -59,6 +60,7 @@
 <title>Create New Account</title>
 </head>
 <body>
+<%@ include file="shared/navigation.jspf" %>
 <h1>Create New Account</h1>
 	<sf:form id="details" method="post"
 		action="${pageContext.request.contextPath}/createaccount"
