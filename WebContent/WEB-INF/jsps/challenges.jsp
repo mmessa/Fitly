@@ -41,5 +41,4 @@
 </table>
 
 
-</body>
-</html>
+<%@ include file="shared/footer.jspf" %>

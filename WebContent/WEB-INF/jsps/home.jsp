@@ -4,6 +4,7 @@
 <p>
 <h1>Fitly Test 1, 2, 3</h1>
 
+
 <c:forEach var="row" items="${users}">
 	username: ${row.username}<br/>
     email: ${row.email}<br/>

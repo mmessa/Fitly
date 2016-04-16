@@ -266,5 +266,4 @@ Coins = <c:out value='${profile.coins}' /><br><br>
 </table>
 
 
-</body>
-</html>
+<%@ include file="shared/footer.jspf" %>

@@ -2,5 +2,6 @@
 <%@ include file="shared/navigation.jspf" %>
 
 An unforseen error occurred. The database may be down. Please try again!
-</body>
-</html>
+
+
+<%@ include file="shared/footer.jspf" %>

@@ -57,5 +57,4 @@
 
 	</sf:form>
 
-</body>
-</html>
+<%@ include file="shared/footer.jspf" %>

@@ -29,7 +29,7 @@ public class LoginController {
 	        new SecurityContextLogoutHandler().logout(request, response, auth);
 	    }
 	    
-	    return "redirect:home";
+	    return "redirect:/";
 	}
 	
 	
