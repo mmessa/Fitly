@@ -14,22 +14,28 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+      	<li><a href="<c:url value='/profile'/>">Profile</a></li>
+      	<li><a href="<c:url value='/challenges'/>">Challenges</a></li>
         <li><a href="#">Store</a></li>
-        <li><a href="<c:url value='/challenges'/>">Challenges</a></li>
-        <li><a href="<c:url value='/login'/>">Login</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      	<sec:authorize access="isAnonymous()">
+      		<li><a href="<c:url value='/login'/>">Login</a></li>
+      	</sec:authorize>
+      	<sec:authorize access="isAuthenticated()"> 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><sec:authentication property="principal.username" /><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<c:url value='/profile'/>">Profile</a></li>
             <li><a href="#">Completed Challenges</a></li>
             <li><a href="#">Rewards</a></li>
+            
             <li role="separator" class="divider"></li>
             <li><a href="#">Edit Registration</a></li>
             <li><a href="<c:url value='/loggedout'/>">Log Out</a></li>
           </ul>
         </li>
+        </sec:authorize>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

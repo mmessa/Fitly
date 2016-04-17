@@ -1,11 +1,4 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<%@ include file="shared/header.jspf" %>
 
 <link href="${pageContext.request.contextPath}/static/css/main.css"
 	rel="stylesheet" type="text/css" />
@@ -68,7 +61,7 @@
 
 		<table class="formtable">
 			<tr>
-				<td class="label">Username:</td>
+				<td>Username:</td>
 				<td><sf:input class="control" path="username" name="username"
 						type="text" /><br />
 					<div class="error">
@@ -76,7 +69,7 @@
 					</div></td>
 			</tr>
 			<tr>
-				<td class="label">Email:</td>
+				<td>Email:</td>
 				<td><sf:input class="control" path="email" name="email"
 						type="text" /><br />
 					<div class="error">
@@ -84,7 +77,7 @@
 					</div></td>
 			</tr>
 			<tr>
-				<td class="label">Password:</td>
+				<td>Password:</td>
 				<td><sf:input id="password" class="control" path="password"
 						name="password" type="password" /><br />
 					<div class="error">
@@ -92,13 +85,13 @@
 					</div></td>
 			</tr>
 			<tr>
-				<td class="label">Confirm Password:</td>
+				<td>Confirm Password:</td>
 				<td><input id="confirmpass" class="control" name="confirmpass"
 					type="password" />
 					<div id="matchpass"></div></td>
 			</tr>
 			<tr>
-				<td class="label"></td>
+				<td></td>
 				<td><input class="control" value="Create" type="submit" /></td>
 			</tr>
 		</table>

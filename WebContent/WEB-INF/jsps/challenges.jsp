@@ -1,14 +1,9 @@
 <%@ include file="shared/header.jspf" %>
 <%@ include file="shared/navigation.jspf" %>
 
-<p>
-<a href="<c:url value='/'/>">Home</a>
-<a href="<c:url value='/profile'/>">Home</a>
-
-</p>
 
 <h2>Challenges</h2>
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>Name</th>

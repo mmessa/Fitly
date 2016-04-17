@@ -1,32 +1,30 @@
 <%@ include file="shared/header.jspf" %>
 <%@ include file="shared/navigation.jspf" %>
 
-<p>
-<h1>Fitly Test 1, 2, 3</h1>
+<sec:authorize access="isAnonymous()">
+	<body onload='document.f.username.focus();'>
+	<c:if test="${param.error != null}">
+		<p class="error">Login failed.</p>
+	</c:if>
+	
+	<form name='f' action='${pageContext.request.contextPath}/login' method='POST'>
+		<table>
+			<tr>
+				<td>User:</td>
+				<td><input type='text' name='username' value=''></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type='password' name='password' /></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input name="submit" type="submit" value="Login" /></td>
+			</tr>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		</table>
+	</form>
+	<p><a href="<c:url value ="/newaccount"/>">Create new account</a></p>
+</sec:authorize>
 
-
-<c:forEach var="row" items="${users}">
-	username: ${row.username}<br/>
-    email: ${row.email}<br/>
-    password: ${row.password}<br/>
-    <br>
-</c:forEach>
-
-
-<a href="${pageContext.request.contextPath}/profile">Go To Profile Page</a>
-<br><br>
-
-<a href="<c:url value='/challenges'/>">Challenges</a>
-<p>
-<a href="<c:url value='/editprofile'/>">Edit Profile</a>
-</p>
-
-<p>
-<a href="<c:url value='/login'/>">Login</a>
-</p>
-
-<p>
-<a href="<c:url value='/loggedout'/>">Logout</a>
-</p>
 
 <%@ include file="shared/footer.jspf" %>
