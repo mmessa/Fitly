@@ -8,11 +8,11 @@
 		<tr>
 			<th>Name</th>
 			<th>Level</th>
-			<th>Picture URL<th>
 			<th>Description</th>
 			<th>Coins Given</th>
 			<th>Experience Given</th>
-			<th colspan="7"></th>
+			<th>PictureUrl</th>
+			<th colspan="6"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,10 +20,10 @@
 		<tr>
 			<td>${row.name}</td>
 			<td>${row.level}</td>
-			<td>${row.pictureUrl}</td>
 			<td>${row.description}</td>
 			<td>${row.coinsGiven}</td>
 			<td>${row.experienceGiven}</td>
+			<td>${row.pictureUrl}</td>
 			<td>
 				<form action="docreateperformance" method="post">
   					<button type="submit" name="challengeId" value="${row.challengeId}" class="btn-link">Select Challenge</button>
