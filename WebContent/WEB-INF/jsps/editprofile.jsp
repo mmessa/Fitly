@@ -1,7 +1,9 @@
 <%@ include file="shared/header.jspf" %>
 <%@ include file="shared/navigation.jspf" %>
+
+<body onload='document.f.firstName.focus();'>
 	
-	<sf:form method="post"
+	<sf:form name="f" method="post"
 		action="${pageContext.request.contextPath}/updateprofile"
 		commandName="profile">
 	<sf:input type="hidden" name="userId" path="userId"/>
