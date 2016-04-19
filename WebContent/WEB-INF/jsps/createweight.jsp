@@ -1,7 +1,7 @@
 <%@ include file="shared/header.jspf" %>
 <%@ include file="shared/navigation.jspf" %>
 
-<body onload='document.f.username.focus();'>
+<body onload='document.f.weight.focus();'>
 	
 	<sf:form name="f" method="post"
 		action="${pageContext.request.contextPath}/docreateweight"
