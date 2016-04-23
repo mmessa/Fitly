@@ -79,7 +79,7 @@ public class ProfileDao {
 	public boolean updateProfile(Profile profile) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 
-		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints where userId=:userId", params) == 1;
+		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints, coins=:coins where userId=:userId", params) == 1;
 	}
 	
 }

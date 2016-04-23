@@ -312,10 +312,10 @@ Coins =
 					<th>Description</th>
 					<th>Coins Given</th>
 					<th>Experience Given</th>
-					<th>Started Date</th>
+					<th>Start Date</th>
 					<th>Completed Date</th>
 					<th>Completed</th>
-					<th colspan="9"></th>
+					<th colspan="10"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -327,12 +327,28 @@ Coins =
 						<td>${row.coinsGiven}</td>
 						<td>${row.experienceGiven}</td>
 						<td>${row.startedDate}</td>
-						<td>${row.completedDate}</td>
-						<td>${row.complete}</td>
+						<c:choose>
+							<c:when test="${row.complete == 1}">
+								<td>${row.completedDate}</td>
+								<td>Yes</td>
+							</c:when>
+							<c:otherwise>
+								<td> -- </td>
+								<td>No</td>
+								<td>
+									<form action="docompleteperformance" method="post">
+										<button type="submit" name="performanceId"
+											value="${row.performanceId}" class="btn-link">Complete</button>
+										<input type="hidden" name="${_csrf.parameterName}"
+											value="${_csrf.token}" />
+									</form>
+								</td>
+							</c:otherwise>
+						</c:choose>
 						<td>
 							<form action="deleteperformance" method="post">
-								<button type="submit" name="performanceId"
-									value="${row.performanceId}" class="btn-link">Delete</button>
+								<button class="btn btn-danger" type="submit" name="performanceId"
+									value="${row.performanceId}">Delete</button>
 								<input type="hidden" name="${_csrf.parameterName}"
 									value="${_csrf.token}" />
 							</form>

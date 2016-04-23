@@ -10,25 +10,64 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mattmessa.fitly.dao.Performance;
+import com.mattmessa.fitly.dao.Profile;
 import com.mattmessa.fitly.service.PerformanceService;
+import com.mattmessa.fitly.service.ProfileService;
 
 @Controller
 public class PerformanceController {
-private PerformanceService performancesService;
+	
+	private PerformanceService performancesService;
+	private ProfileService profilesService;
 	
 	@Autowired
 	public void setPerformancesService(PerformanceService performancesService) {
 		this.performancesService = performancesService;
 	}
 	
+	@Autowired
+	public void setProfilesService(ProfileService profilesService) {
+		this.profilesService = profilesService;
+	}
+
 	@RequestMapping("/docompleteperformance")
 	public String completePerformance(Model model, HttpServletRequest request) {
 	
-		int performanceId = 0;
+		int userId = (int)request.getSession().getAttribute("userId");
+		int performanceId = Integer.parseInt(request.getParameter("performanceId"));
 		
-		performanceId = Integer.parseInt(request.getParameter("performanceId"));
+		Performance performance = performancesService.getPerformance(performanceId);
+		Profile profile = profilesService.getProfile(userId);
+
+		//add coins and xp to profile, check to see if lvled up
+		boolean leveledUp = false;
+		int coins = profile.getCoins();
+		int level = profile.getLevel();
+		int xp = profile.getExperiencePoints();
+		
+		leveledUp = profile.didLevelUp(xp);
+		if (leveledUp)
+			System.out.println("leveledUp = true");
+		
+		if (leveledUp)
+		{
+			level = level + 1;
+			System.out.printf("level = %d", level);
+			profile.setLevel(level);
+		}
+		
+		
+		coins = coins + performance.getCoinsGiven();
+		xp = xp + performance.getExperienceGiven();
+		
+		System.out.printf("coins = %d and xp = %d", coins, xp);
+		profile.setCoins(coins);
+		profile.setExperiencePoints(xp);
+		
+		profilesService.updateProfile(profile);
 		performancesService.completePerformance(performanceId);
-		
+		System.out.println("past here 3");
+
 		
 		return "redirect:profile";
 	}

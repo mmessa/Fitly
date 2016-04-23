@@ -30,6 +30,7 @@
 		<security:intercept-url pattern="/docreateweight" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreateperformance" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreateupdate" access="isAuthenticated()" />
+		<security:intercept-url pattern="/docompleteperformance" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreategoal" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreatebodyfat" access="isAuthenticated()" />
 		<security:intercept-url pattern="/docreatesupplement" access="isAuthenticated()" />

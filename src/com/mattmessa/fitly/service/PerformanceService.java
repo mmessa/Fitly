@@ -21,6 +21,9 @@ public class PerformanceService {
 		performanceDao.create(performance);
 	}
 	
+	public Performance getPerformance(int performanceId) {
+		return performanceDao.getPerformance(performanceId);
+	}
 	
 	public List<Performance> getPerformances(int userId) {
 		return performanceDao.getPerformances(userId);
