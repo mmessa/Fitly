@@ -2,6 +2,9 @@
 <%@ include file="shared/navigation.jspf"%>
 
 <h2>Profile</h2>
+<img src="<c:url value='/static/images/static/profilePic2.jpg'/>" alt="pic">
+<br>
+ 
 First Name =
 <c:out value='${profile.firstName}' />
 <br>
