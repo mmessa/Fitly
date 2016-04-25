@@ -23,7 +23,7 @@
 			<td>${row.description}</td>
 			<td>${row.coinsGiven}</td>
 			<td>${row.experienceGiven}</td>
-			<td>${row.pictureUrl}</td>
+			<td><img src="<c:url value='/static/images/static/${row.pictureUrl}'/>" alt="pic"></td>
 			<td>
 				<form action="docreateperformance" method="post">
   					<button type="submit" name="challengeId" value="${row.challengeId}" class="btn-link">Select Challenge</button>
