@@ -18,3 +18,20 @@ h3 {
 	color: red;
 	font-size: small;
 }
+
+.challenges {
+	text-align: center;
+}
+
+.challengeHeader {
+	margin: auto auto;
+	display: block;
+	text-align: center;
+}
+
+.img {
+	max-width: 250px;
+  	margin: 0 auto;
+  	display: block;
+}
+
