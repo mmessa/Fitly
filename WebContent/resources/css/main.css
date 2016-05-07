@@ -9,6 +9,15 @@ h3 {
 	text-align: center;
 }
 
+img {
+	border: 1.5px solid #e6e6e6;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 .valid {
 	color: green;
 	font-size: small;

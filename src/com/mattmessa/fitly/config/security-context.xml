@@ -18,6 +18,8 @@
 	<security:http use-expressions="true">
 		<security:intercept-url pattern="/static/**" access="permitAll" />
 		<security:intercept-url pattern="/webjars/**" access="permitAll" />		
+		<security:intercept-url pattern="/test" access="permitAll" />
+		
 		<security:intercept-url pattern="/profile" access="isAuthenticated()" />
 		<security:intercept-url pattern="/challenges" access="isAuthenticated()" />
 		<security:intercept-url pattern="/editprofile" access="isAuthenticated()" />
