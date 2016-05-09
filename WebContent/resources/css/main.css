@@ -5,17 +5,107 @@ h1 {
 	color: black;
 }
 
+body {
+	background-color: #616161;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
 h3 {
 	text-align: center;
 }
 
 img {
 	border: 1.5px solid #e6e6e6;
-    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.navbar-default {
+	background-color: #212121; /* the dark grey nav bar background */
+	height: 75px;
+	border-radius: 0px !important; box-shadow : none !important;
+	-webkit-box-shadow : none !important;
+	border-left: none !important;
+	border-right: none !important;
+	border-top: none !important; border-color : #03A9F4;
+	font-family: "Arial Black", Gadget, sans-serif;
+	border-color: #03A9F4;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+/* title */
+.navbar-default .navbar-brand {
+	height: 75px;
+	color: white;
+	font-size: 25px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{
+	color: #03A9F4; /* light blue on hover for brand */
+	height: 75px;
+}
+/* link */
+.navbar-default .navbar-nav>li>a {
+	color: white;
+	padding-top: 26px;
+	font-size: 15px;
+	height: 74px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	color: #03A9F4; /* light blue on hover for links */
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	color: white;
+	background-color: red;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
+	.navbar-default .navbar-nav>.open>a:focus {
+	color: white;
+	background-color: #03A9F4; /* light blue drop down bg color */
+}
+/* caret */
+.navbar-default .navbar-nav>.dropdown>a .caret {
+	border-top-color: #03A9F4; /* light blue drop down bg color */;
+	border-bottom-color: red;
+}
+
+.navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret
+	{
+	border-top-color: #03A9F4; /* light blue drop down bg color */
+	border-bottom-color: gray;
+}
+
+.navbar-default .navbar-nav>.open>a .caret, .navbar-default .navbar-nav>.open>a:hover .caret,
+	.navbar-default .navbar-nav>.open>a:focus .caret {
+	border-top-color: white;
+	border-bottom-color: gray;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+	border-color: white;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+	{
+	background-color: #03A9F4; /* light blue drop down bg color */;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus
+	{
+	background-color: white !important;
 }
 
 .challengeBody {
@@ -25,7 +115,7 @@ img {
 .loginForm {
 	margin-right: auto;
 	margin-left: auto;
-	width:200px;
+	width: 200px;
 }
 
 .valid {
@@ -48,26 +138,38 @@ img {
 	text-align: center;
 }
 
-.img {
-	max-width: 250px;
-  	margin: 0 auto;
-  	display: block;
-}
-
 .ui-accordion-content {
-	
 	
 }
 
 .ui-accordion-header {
-	 background: dimgray;
-	 color: black;
+	background: #3e3e3e;
+	height: 50px;
+	color: white;
+	font-family: "Arial Black", Gadget, sans-serif;
+	border: 1px solid white;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	overflow: hidden;
 	
 }
 
+.ui-state-hover {
+	
+	color: red;
+}
+
+.ui-accordion-icon:active {
+	
+	color: #03A9F4;
+}
+.ui-accordion-header:hover {
+		color: #03A9F4;
+	}
 
 .ui-accordion {
-	background-color: dimgray;
-	
+	margin: 0 0 50px 0;
+	padding: 10px 10px 10px 10px;
 }
-

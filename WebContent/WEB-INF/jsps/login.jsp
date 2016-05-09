@@ -1,9 +1,10 @@
 <%@ include file="shared/header.jspf" %>
 <%@ include file="shared/navigation.jspf" %>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/main.css">
+
 
 
 <body onload='document.f.username.focus();'>
+<div class="container-fluid">
 	<h3>Login with Username and Password</h3>
 	
 	<c:if test="${param.error != null}">
@@ -30,5 +31,5 @@
 	</form>
 	
 	<p><a href="<c:url value ="/newaccount"/>">Create new account</a></p>
-
+</div>
 <%@ include file="shared/footer.jspf" %>
