@@ -21,10 +21,6 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping("/test")
-	public String s(){
-		return "test";
-	}
 	
 	@RequestMapping(value="/loggedout", method = RequestMethod.GET)
 	public String logoutPage (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

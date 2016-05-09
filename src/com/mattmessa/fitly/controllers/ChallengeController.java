@@ -25,9 +25,20 @@ public class ChallengeController {
 	@RequestMapping("/challenges")
 	public String showChallenges(Model model, HttpServletRequest request) {
 		
+		int userId = (int) request.getSession().getAttribute("userId");
+		
 		List<Challenge> challenges = challengesService.getChallenges();
+		List<Challenge> beginnerChallenges = challengesService.getBeginnerChallenges();
+		List<Challenge> intermediateChallenges = challengesService.getIntermediateChallenges();
+		List<Challenge> advancedChallenges = challengesService.getAdvancedChallenges();
+		List<Challenge> completedChallenges = challengesService.getCompletedChallenges(userId);
 		
 		model.addAttribute("challenges", challenges);
+		model.addAttribute("beginnerChallenges", beginnerChallenges);
+		model.addAttribute("intermediateChallenges", intermediateChallenges);
+		model.addAttribute("advancedChallenges", advancedChallenges);
+		model.addAttribute("completedChallenges", completedChallenges);
+
 		
 		return "challenges";
 		

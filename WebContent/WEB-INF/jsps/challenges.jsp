@@ -17,7 +17,7 @@
 							alt="pic" class="img">
 						<form action="docreateperformance" method="post">
 							<button type="submit" name="challengeId"
-								value="${row.challengeId}" class="btn-link">Select
+								value="${row.challengeId}" class="btn btn-info">Select
 								Challenge</button>
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
@@ -28,8 +28,96 @@
 			</div>
 
 		</div>
-		<h3>Completed Challenges</h3>
-		<div></div>
+		<h3>Beginner Challenges</h3>
+		<div>
+			<div class="row challenges">
+
+				<c:forEach var="row" items="${beginnerChallenges}">
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+						<img
+							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
+							alt="pic" class="img">
+						<form action="docreateperformance" method="post">
+							<button type="submit" name="challengeId"
+								value="${row.challengeId}" class="btn-link">Select
+								Challenge</button>
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+						</form>
+
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<h3>Intermediate Challenges</h3>
+		<div>
+			<div class="row challenges">
+
+				<c:forEach var="row" items="${intermediateChallenges}">
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+						<img
+							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
+							alt="pic" class="img">
+						<form action="docreateperformance" method="post">
+							<button type="submit" name="challengeId"
+								value="${row.challengeId}" class="btn-link">Select
+								Challenge</button>
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+						</form>
+
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<h3>Advanced Challenges</h3>
+		<div>
+			<div class="row challenges">
+
+				<c:forEach var="row" items="${advancedChallenges}">
+					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+						<img
+							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
+							alt="pic" class="img">
+						<form action="docreateperformance" method="post">
+							<button type="submit" name="challengeId"
+								value="${row.challengeId}" class="btn-link">Select
+								Challenge</button>
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+						</form>
+
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<h3>My Completed Challenges</h3>
+		<div>
+			<div class="row challenges">
+				<c:choose>
+					<c:when test="${completedChallenges.size() == 0}">
+				No challenges completed
+				</c:when>
+					<c:otherwise>
+						<c:forEach var="row" items="${completedChallenges}">
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+								<img
+									src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
+									alt="pic" class="img">
+								
+
+							</div>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+
+			</div>
+
+		</div>
 	</div>
 </div>
 

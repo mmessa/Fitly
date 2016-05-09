@@ -18,6 +18,16 @@ img {
     overflow: hidden;
 }
 
+.challengeBody {
+	background-color: dimgray;
+}
+
+.loginForm {
+	margin-right: auto;
+	margin-left: auto;
+	width:200px;
+}
+
 .valid {
 	color: green;
 	font-size: small;
@@ -42,5 +52,22 @@ img {
 	max-width: 250px;
   	margin: 0 auto;
   	display: block;
+}
+
+.ui-accordion-content {
+	
+	
+}
+
+.ui-accordion-header {
+	 background: dimgray;
+	 color: black;
+	
+}
+
+
+.ui-accordion {
+	background-color: dimgray;
+	
 }
 

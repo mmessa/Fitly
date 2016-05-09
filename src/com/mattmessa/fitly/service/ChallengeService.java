@@ -20,4 +20,20 @@ public class ChallengeService {
 	public List<Challenge> getChallenges() {
 		return challengeDao.getChallenges();
 	}
+
+	public List<Challenge> getBeginnerChallenges() {
+		return challengeDao.getBeginnerChallenges();
+	}
+
+	public List<Challenge> getIntermediateChallenges() {
+		return challengeDao.getIntermediateChallenges();
+	}
+
+	public List<Challenge> getAdvancedChallenges() {
+		return challengeDao.getAdvancedChallenges();
+	}
+
+	public List<Challenge> getCompletedChallenges(int userId) {
+		return challengeDao.getCompletedChallenges(userId);
+	}
 }
