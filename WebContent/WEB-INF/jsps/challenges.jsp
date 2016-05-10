@@ -2,7 +2,7 @@
 <%@ include file="shared/navigation.jspf"%>
 
 <div class="container-fluid">
-	<h1>Challenges</h1>
+	<h1>Fitly Challenges</h1>
 	<br>
 	<div id="accordion">
 		<h3>All Challenges</h3>
