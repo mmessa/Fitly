@@ -14,14 +14,8 @@ h3 {
 	text-align: center;
 }
 
-img {
-	border: 1.5px solid #e6e6e6;
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-	border-radius: 5px;
-	overflow: hidden;
-}
+
+
 
 .navbar-default {
 	background-color: #212121; /* the dark grey nav bar background */
@@ -108,36 +102,7 @@ img {
 	background-color: white !important;
 }
 
-.challengeBody {
-	background-color: dimgray;
-}
-
-.loginForm {
-	margin-right: auto;
-	margin-left: auto;
-	width: 200px;
-}
-
-.valid {
-	color: green;
-	font-size: small;
-}
-
-.error {
-	color: red;
-	font-size: small;
-}
-
-.challenges {
-	text-align: center;
-}
-
-.challengeHeader {
-	margin: auto auto;
-	display: block;
-	text-align: center;
-}
-
+/* jquery ui accordion */
 .ui-accordion-content {
 	
 }
@@ -156,20 +121,53 @@ img {
 	
 }
 
-.ui-state-hover {
-	
-	color: red;
-}
 
-.ui-accordion-icon:active {
-	
-	color: #03A9F4;
-}
 .ui-accordion-header:hover {
 		color: #03A9F4;
-	}
+}
 
 .ui-accordion {
-	margin: 0 0 50px 0;
-	padding: 10px 10px 10px 10px;
+	
+}
+
+/* MY CSS */
+
+.loginForm {
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+}
+
+.valid {
+	color: green;
+	font-size: small;
+}
+
+.error {
+	color: red;
+	font-size: small;
+}
+
+.challengeImg {
+	border: 1.5px 1.5px 0 1.5px solid #e6e6e6;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow: hidden;
+}
+
+.selectChallengeButton {
+	font-family: "Arial Black", Gadget, sans-serif;
+	width: 245px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	background-color: #03A9F4 !important;
+}
+
+.selectChallengeButton:hover {
+	color: #212121;
 }
