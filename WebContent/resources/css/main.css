@@ -19,7 +19,7 @@ h3 {
 
 .navbar-default {
 	background-color: #212121; /* the dark grey nav bar background */
-	height: 75px;
+	height: 90px;
 	border-radius: 0px !important; box-shadow : none !important;
 	-webkit-box-shadow : none !important;
 	border-left: none !important;
@@ -32,7 +32,7 @@ h3 {
 }
 /* title */
 .navbar-default .navbar-brand {
-	height: 75px;
+	height: 90px;
 	color: white;
 	font-size: 25px;
 }
@@ -45,8 +45,8 @@ h3 {
 /* link */
 .navbar-default .navbar-nav>li>a {
 	color: white;
-	padding-top: 26px;
-	font-size: 15px;
+	padding-top: 35px;
+	font-size: 17px;
 	height: 74px;
 }
 
@@ -150,9 +150,9 @@ h3 {
 
 .challengeImg {
 	border: 1.5px 1.5px 0 1.5px solid #e6e6e6;
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.3);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	overflow: hidden;
@@ -166,6 +166,9 @@ h3 {
 	border-top-left-radius: 0px !important;
 	border-top-right-radius: 0px !important;
 	background-color: #03A9F4 !important;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .lowLevel {
@@ -176,8 +179,11 @@ h3 {
 	border-top-left-radius: 0px !important;
 	border-top-right-radius: 0px !important;
 	background-color: #212121 !important;
-	border-color: #212121 !important;
+	border-color: dimgray !important;
 	margin-bottom: 17px;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .lowLevel:hover {
@@ -187,4 +193,86 @@ h3 {
 
 .selectChallengeButton:hover {
 	color: #212121;
+}
+
+.quote {
+  text-align: left;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  background-color: gray;
+  color: white;
+  padding-left: 5%;
+  padding-top: 5px;
+
+}
+
+.description {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  margin-top: 0;
+  color: white;
+}
+
+.quote .author {
+  padding-left: 10%;
+}
+
+.footer {
+  color: white;
+  height: 500px;
+  margin-top: 10em;
+  background-color: #212121;
+  font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+.footer .logo_section h1 {
+	color: #03A9F4;
+	margin: -10px 0 5px 0;
+}
+
+.footer .logo_section {
+  background-color: #333333;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.logo a, .logo a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: red;
+}
+
+.footer_nav_social {
+  padding: 10px;
+  margin: 1px 0 1px 0;
+  background-color: #212121;
+}
+.footer ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.footer li {
+  padding-right: 5px;
+  display: inline;
+  margin-right: 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+
+}
+
+.svg {
+	width: 100%;
+	height:auto;
+	margin-top: -20px;
 }

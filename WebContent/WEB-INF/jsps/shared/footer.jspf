@@ -1,4 +1,47 @@
-<script src="webjars/bootstrap/3.3.6/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<div class="footer">
+	<div class="quote">
+		"Ability is what you're capable of doing. Motivation determines what
+		you do. Attitude determines how well you do it."
+		<div class="author">
+			<em>- Lou Holtz</em>
+		</div>
+	</div>
+	<div class="logo_section">
+		<div class="logo">
+			<a href="<c:url value='/'/>"><img src="<c:url value='/static/images/static/fitly_logo.png'/> "
+				height="120px" width="120px"></a>
+		</div>
+		<div class="description">
+			<h1>Because Fitness Loves You!</h1>
+			Your progress is what drives us. Fitly is your place where you can
+			keep track of your progress, your goals, your updates, your
+			supplements, your workouts, and more. MyFit gives you the technology,
+			tools, and support to help you achieve all of your fitness
+			aspirations, and ultimately become your best self.
+		</div>
+	</div>
+
+	<div class="footer_nav_social">
+		<ul>
+			<li><a href="<c:url value='/'/>"><img
+				src="<c:url value='/static/images/static/fitly_logo.png'/> "
+				height="45px" width="45px"></a></li>
+			<li><a href="<c:url value='/'/>"><img
+				src="<c:url value='/static/images/static/fitly_instagram.png'/> "
+				height="45px" width="45px"></a></li>
+			<li><a href="<c:url value='/'/>"><img
+				src="<c:url value='/static/images/static/fitly_facebook.png'/> "
+				height="60px" width="60px"></a></li>
+			<li><a href="<c:url value='/'/>"><img
+				src="<c:url value='/static/images/static/fitly_twitter.png'/> "
+				height="45px" width="45px"></a></li>
+
+		</ul>
+	</div>
+</div>
+
+<script src="webjars/bootstrap/3.3.6/dist/js/bootstrap.min.js"
+	type="text/javascript"></script>
 
 </body>
 </html>

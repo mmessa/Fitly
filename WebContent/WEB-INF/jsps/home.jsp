@@ -1,6 +1,6 @@
 <%@ include file="shared/header.jspf"%>
 <%@ include file="shared/navigation.jspf"%>
-<body>
+<!--
 	<h1>Fitly Home</h1>
 
 	<sec:authorize access="isAnonymous()">
@@ -37,8 +37,10 @@
 				</p>
 			</div>
 	</sec:authorize>
-</body>
-
+	-->
+<div class="svg">
+<img src="<c:url value='/static/images/static/test.png'/>" width="100%">
+</div>
 
 
 <%@ include file="shared/footer.jspf"%>
