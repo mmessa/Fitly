@@ -148,7 +148,12 @@ public class Profile {
 			else
 				return false;
 		case 1:
-			if (xp >= 3000) // LEVEL 1 EXPERIENCE
+			if (xp >= 3000) // LEVEL 2 EXPERIENCE
+				return true;
+			else
+				return false;
+		case 2:
+			if (xp >= 7000) // LEVEL 3 EXPERIENCE
 				return true;
 			else
 				return false;
