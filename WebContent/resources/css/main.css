@@ -159,7 +159,7 @@ h3 {
 }
 
 .selectChallengeButton {
-	font-family: "Arial Black", Gadget, sans-serif;
+	font-family: "Arial Black", Gadget, sans-serif !important;
 	width: 245px;
 	margin-right: auto;
 	margin-left: auto;
@@ -167,6 +167,23 @@ h3 {
 	border-top-right-radius: 0px !important;
 	background-color: #03A9F4 !important;
 }
+
+.lowLevel {
+	font-family: "Arial Black", Gadget, sans-serif;
+	width: 245px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	background-color: #212121 !important;
+	border-color: #212121 !important;
+	margin-bottom: 17px;
+}
+
+.lowLevel:hover {
+	cursor: default !important;
+}
+
 
 .selectChallengeButton:hover {
 	color: #212121;

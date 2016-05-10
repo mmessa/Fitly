@@ -15,15 +15,26 @@
 						<img
 							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
 							alt="pic" class="challengeImg">
-						<form action="docreateperformance" method="post">
-							<button type="submit" name="challengeId"
-								value="${row.challengeId}" class="btn btn-info selectChallengeButton">Select
-								Challenge</button>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-						</form>
+						<c:choose>
+							<c:when test="${level < row.level}">
 
+								<div class="btn btn-info lowLevel">Unqualified Level</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<form action="docreateperformance" method="post">
+									<button type="submit" name="challengeId"
+										value="${row.challengeId}"
+										class="btn btn-info selectChallengeButton">Select
+										Challenge</button>
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" />
+								</form>
+							</c:otherwise>
+						</c:choose>
 					</div>
+
 				</c:forEach>
 			</div>
 
@@ -38,14 +49,24 @@
 						<img
 							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
 							alt="pic" class="challengeImg">
-						<form action="docreateperformance" method="post">
-							<button type="submit" name="challengeId"
-								value="${row.challengeId}" class="btn btn-info selectChallengeButton">Select
-								Challenge</button>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-						</form>
+						<c:choose>
+							<c:when test="${level < row.level}">
 
+								<div class="btn btn-info lowLevel">Unqualified Level</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<form action="docreateperformance" method="post">
+									<button type="submit" name="challengeId"
+										value="${row.challengeId}"
+										class="btn btn-info selectChallengeButton">Select
+										Challenge</button>
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" />
+								</form>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</c:forEach>
 			</div>
@@ -60,14 +81,24 @@
 						<img
 							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
 							alt="pic" class="challengeImg">
-						<form action="docreateperformance" method="post">
-							<button type="submit" name="challengeId"
-								value="${row.challengeId}" class="btn btn-info selectChallengeButton">Select
-								Challenge</button>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-						</form>
+						<c:choose>
+							<c:when test="${level < row.level}">
 
+								<div class="btn btn-info lowLevel">Unqualified Level</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<form action="docreateperformance" method="post">
+									<button type="submit" name="challengeId"
+										value="${row.challengeId}"
+										class="btn btn-info selectChallengeButton">Select
+										Challenge</button>
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" />
+								</form>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</c:forEach>
 			</div>
@@ -82,14 +113,24 @@
 						<img
 							src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
 							alt="pic" class="challengeImg">
-						<form action="docreateperformance" method="post">
-							<button type="submit" name="challengeId"
-								value="${row.challengeId}" class="btn btn-info selectChallengeButton">Select
-								Challenge</button>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-						</form>
+						<c:choose>
+							<c:when test="${level < row.level}">
 
+								<div class="btn btn-info lowLevel">Unqualified Level</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<form action="docreateperformance" method="post">
+									<button type="submit" name="challengeId"
+										value="${row.challengeId}"
+										class="btn btn-info selectChallengeButton">Select
+										Challenge</button>
+									<input type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" />
+								</form>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</c:forEach>
 			</div>
@@ -108,7 +149,7 @@
 								<img
 									src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
 									alt="pic" class="challengeImg">
-								
+
 
 							</div>
 						</c:forEach>
