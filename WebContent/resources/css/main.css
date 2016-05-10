@@ -326,6 +326,10 @@ h3 {
 	color: white;
 }
 
-.formElements td {
-	
+.loginButton {
+	margin-top: 5px;
+}
+
+.goalButton {
+	margin-top: -40px;
 }
