@@ -78,7 +78,9 @@ public class ProfileDao {
 	
 	public boolean updateProfile(Profile profile) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
-
+		System.out.printf("updating profile\n");
+		System.out.printf("level = %d\n", profile.getLevel());
+		
 		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints, coins=:coins where userId=:userId", params) == 1;
 	}
 	

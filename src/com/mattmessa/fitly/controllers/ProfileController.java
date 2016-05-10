@@ -144,9 +144,19 @@ public class ProfileController {
 	}
 	
 	@RequestMapping(value="/updateprofile", method=RequestMethod.POST)
-	public String updateProfile(@Valid Profile profile, BindingResult result, HttpServletResponse response) throws IOException, ServletException {
+	public String updateProfile(@Valid Profile profile, BindingResult result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
-		//System.out.println("about to update profile");
+		int userId = (int)request.getSession().getAttribute("userId");
+		Profile preUpdatedProfile = profilesService.getProfile(userId);
+		
+		int level = preUpdatedProfile.getLevel();
+		int xp = preUpdatedProfile.getExperiencePoints();
+		int coins = preUpdatedProfile.getCoins();
+		
+		profile.setLevel(level);
+		profile.setExperiencePoints(xp);
+		profile.setCoins(coins);
+		
 		profilesService.updateProfile(profile);
 		
 		response.sendRedirect("profile");

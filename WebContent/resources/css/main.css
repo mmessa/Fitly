@@ -17,11 +17,13 @@ h3 {
 .navbar-default {
 	background-color: #212121; /* the dark grey nav bar background */
 	height: 90px;
-	border-radius: 0px !important; box-shadow : none !important;
-	-webkit-box-shadow : none !important;
+	border-radius: 0px !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
 	border-left: none !important;
 	border-right: none !important;
-	border-top: none !important; border-color : #03A9F4;
+	border-top: none !important;
+	border-color: #03A9F4;
 	font-family: "Arial Black", Gadget, sans-serif;
 	border-color: #03A9F4;
 	-webkit-box-shadow: none !important;
@@ -116,11 +118,10 @@ h3 {
 	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 	overflow: hidden;
-	
 }
 
 .ui-accordion-header:hover {
-		color: #03A9F4;
+	color: #03A9F4;
 }
 
 .ui-accordion {
@@ -128,7 +129,6 @@ h3 {
 }
 
 /* MY CSS */
-
 .loginForm {
 	margin-right: auto;
 	margin-left: auto;
@@ -168,6 +168,10 @@ h3 {
 	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
+.selectChallengeButton:hover {
+	color: #212121;
+}
+
 .lowLevel {
 	font-family: "Arial Black", Gadget, sans-serif;
 	width: 245px;
@@ -187,40 +191,49 @@ h3 {
 	cursor: default !important;
 }
 
+.myButton {
+	font-family: "Arial Black", Gadget, sans-serif !important;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #03A9F4 !important;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+}
 
-.selectChallengeButton:hover {
+.myButton:hover {
 	color: #212121;
 }
 
 .quote {
-  text-align: left;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 15px;
-  background-color: gray;
-  color: white;
-  padding-left: 5%;
-  padding-top: 5px;
-
+	border-top: 1.5px solid #03A9F4;
+	text-align: left;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 15px;
+	background-color: gray;
+	color: white;
+	padding-left: 5%;
+	padding-top: 5px;
+	text-align: left;
 }
 
 .description {
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 15px;
-  margin-top: 0;
-  color: white;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 15px;
+	margin-top: 0;
+	color: white;
 }
 
 .quote .author {
-  padding-left: 10%;
+	padding-left: 10%;
 }
 
 .footer {
-  color: white;
-  height: 500px;
-  margin-top: 10em;
-  background-color: #212121;
-  font-family: "Arial Black", Gadget, sans-serif;
-
+	color: white;
+	height: 500px;
+	margin-top: 10em;
+	background-color: #212121;
+	font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .footer .logo_section h1 {
@@ -229,48 +242,49 @@ h3 {
 }
 
 .footer .logo_section {
-  background-color: #333333;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  padding-left: 20%;
-  padding-right: 20%;
-  text-align: center;
+	background-color: #333333;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
 }
 
 .logo {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .logo a, .logo a:hover {
-  text-decoration: none;
-  background-color: transparent;
-  color: red;
+	text-decoration: none;
+	background-color: transparent;
+	color: red;
 }
 
 .footer_nav_social {
-  padding: 10px;
-  margin: 1px 0 1px 0;
-  background-color: #212121;
+	padding: 10px;
+	margin: 1px 0 1px 0;
+	background-color: #212121;
 }
-.footer ul {
-  list-style-type: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-.footer li {
-  padding-right: 5px;
-  display: inline;
-  margin-right: 10px;
-  margin-top: 1px;
-  margin-bottom: 1px;
 
+.footer ul {
+	list-style-type: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.footer li {
+	padding-right: 5px;
+	display: inline;
+	margin-right: 10px;
+	margin-top: 1px;
+	margin-bottom: 1px;
 }
 
 .svg {
 	width: 100%;
-	height:auto;
+	height: auto;
 	margin-top: -20px;
 }
 
@@ -279,6 +293,7 @@ h3 {
 	margin: 0px 0 5px 15px;
 	color: white;
 }
+
 .profileHeader {
 	width: 100%;
 	background-color: #212121;
@@ -300,7 +315,6 @@ h3 {
 	overflow: hidden;
 	width: 200px;
 	height: 200px;
-	
 }
 
 .fieldSpace {
@@ -308,7 +322,10 @@ h3 {
 	margin-left: 5px;
 }
 
-.formElements {
+.fieldTitle {
 	color: white;
+}
+
+.formElements td {
 	
 }
