@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
@@ -27,6 +28,49 @@
     	active: false
     });
   });
+  
+	function onLoad() {
+		$("#password").keyup(checkPasswordsMatch);
+		$("#confirmpass").keyup(checkPasswordsMatch)
+		
+		$("#details").submit(canSubmit);
+		
+	}
+	
+	function canSubmit() {
+		var password = $("#password").val()
+		var confirmpass = $("#confirmpass").val()
+		
+		if (password != confirmpass) {
+			alert("<fmt:message key='UnmatchedPasswords.user.password'/>");
+			return flase;
+		}
+		else {
+			return true;
+		}
+	}
+
+	function checkPasswordsMatch() {
+		var password = $("#password").val()
+		var confirmpass = $("#confirmpass").val()
+
+		if (password.length > 3 || confirmpass.length > 3) {
+
+			if (password == confirmpass) {
+				$("#matchpass").text("<fmt:message key='MatchedPasswords.user.password'/>");
+				$("#matchpass").addClass("valid");
+				$("#matchpass").removeClass("error");
+			} else {
+				$("#matchpass").text("<fmt:message key='UnmatchedPasswords.user.password'/>");
+				$("#matchpass").addClass("error");
+				$("#matchpass").removeClass("valid");
+			}
+		}
+	}
+	
+
+	$(document).ready(onLoad);
 </script>
+
 </head>
 <body>
