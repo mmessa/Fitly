@@ -1,11 +1,23 @@
 <%@ include file="shared/header.jspf"%>
 <%@ include file="shared/navigation.jspf"%>
 
+<h3 id="myProfile">My Profile</h3>
+<div class="profileHeader">
+	<img src="<c:url value='/static/images/static/profilePic2.jpg'/>"
+		alt="pic" class="profilePicture">
+	<div class="profileElements">
+		<c:out value='${profile.firstName}' />
+		<c:out value='${profile.lastName}' />
+		<c:out value='${profile.level}' />
+		<c:out value='${profile.experiencePoints}' />
+		<c:out value='${profile.coins}' />
+	</div>
+	
+</div>
 <div class="container-fluid">
 
-	<h2>Profile</h2>
-	<img src="<c:url value='/static/images/static/profilePic2.jpg'/>"
-		alt="pic"> <br> First Name =
+
+	<br> First Name =
 	<c:out value='${profile.firstName}' />
 	<br> Last Name =
 	<c:out value='${profile.lastName}' />
