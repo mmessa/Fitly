@@ -4,6 +4,14 @@
 <body onload='document.f.firstName.focus();'>
 	<div class="container-fluid">
 		<div class="formElements">
+			<sf:form method="post"
+				action="${pageContext.request.contextPath}/uploader?${_csrf.parameterName}=${_csrf.token}"
+				encType="multipart/form-data">
+
+				<input type="file" name="file" value="Select image ..." />
+
+				<input type="submit" value="Start upload" />
+			</sf:form>
 			<sf:form name="f" method="post"
 				action="${pageContext.request.contextPath}/updateprofile"
 				commandName="profile">
@@ -36,27 +44,27 @@
 
 					<tr>
 						<td class="fieldTitle">City:</td>
-						<td ><sf:input class="control fieldSpace"
-								path="city" name="city" type="text" /><br /> <sf:errors
-								path="city" cssClass="error"></sf:errors></td>
+						<td><sf:input class="control fieldSpace" path="city"
+								name="city" type="text" /><br /> <sf:errors path="city"
+								cssClass="error"></sf:errors></td>
 					</tr>
 					<tr>
 						<td class="fieldTitle">State:</td>
-						<td><sf:input class="control fieldSpace"
-								path="state" name="state" type="text" /><br /> <sf:errors
-								path="state" cssClass="error"></sf:errors></td>
+						<td><sf:input class="control fieldSpace" path="state"
+								name="state" type="text" /><br /> <sf:errors path="state"
+								cssClass="error"></sf:errors></td>
 					</tr>
 					<tr>
 						<td class="fieldTitle">Zip Code:</td>
-						<td><sf:input class="control fieldSpace"
-								path="zipCode" name="zipCode" type="text" /><br /> <sf:errors
-								path="zipCode" cssClass="error"></sf:errors></td>
+						<td><sf:input class="control fieldSpace" path="zipCode"
+								name="zipCode" type="text" /><br /> <sf:errors path="zipCode"
+								cssClass="error"></sf:errors></td>
 					</tr>
 					<tr>
 						<td class="fieldTitle">Gym:</td>
-						<td><sf:input class="control fieldSpace"
-								path="gym" name="gym" type="text" /><br /> <sf:errors
-								path="gym" cssClass="error"></sf:errors></td>
+						<td><sf:input class="control fieldSpace" path="gym"
+								name="gym" type="text" /><br /> <sf:errors path="gym"
+								cssClass="error"></sf:errors></td>
 					</tr>
 
 					<tr>

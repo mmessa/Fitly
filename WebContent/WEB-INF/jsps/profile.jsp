@@ -3,7 +3,7 @@
 
 <h3 id="myProfile">My Profile</h3>
 <div class="profileHeader">
-	<img src="<c:url value='/static/images/static/profilePic2.jpg'/>"
+	<img src="<c:url value='/uploads/${profile.userId}/profile.jpg'/>"
 		alt="pic" class="profilePicture">
 	<div class="profileElements">
 		<c:out value='${profile.firstName}' />

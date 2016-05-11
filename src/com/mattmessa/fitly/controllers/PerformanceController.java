@@ -45,6 +45,9 @@ public class PerformanceController {
 		int level = profile.getLevel();
 		int xp = profile.getExperiencePoints();
 		
+		coins = coins + performance.getCoinsGiven();
+		xp = xp + performance.getExperienceGiven();
+		
 		leveledUp = profile.didLevelUp(xp);
 		if (leveledUp)
 			System.out.println("leveledUp = true");
@@ -56,9 +59,6 @@ public class PerformanceController {
 			profile.setLevel(level);
 		}
 		
-		
-		coins = coins + performance.getCoinsGiven();
-		xp = xp + performance.getExperienceGiven();
 		
 		System.out.printf("coins = %d and xp = %d", coins, xp);
 		profile.setCoins(coins);
