@@ -1,26 +1,28 @@
-<%@ include file="shared/header.jspf" %>
-<%@ include file="shared/navigation.jspf" %>
+<%@ include file="shared/header.jspf"%>
+<%@ include file="shared/navigation.jspf"%>
 
 <body onload='document.f.notes.focus();'>
-	
-	<sf:form name="f" method="post"
-		action="${pageContext.request.contextPath}/docreateupdate"
-		commandName="update">
-	<sf:input type="hidden" name="updateId" path="updateId"/>
-		<table>
-			<tr>
-				<td>Notes:</td>
-				<td><sf:input class="control" path="notes" name="notes" 
-						type="text" /><br /> <sf:errors path="notes" cssClass="error"></sf:errors></td>
-			</tr>
-			
-			<tr>
-				<td></td>
-				<td><input class="control" value="Submit" type="submit" /></td>
-				
-			</tr>
-		</table>
+	<div class="container-fluid">
+		<div class="formElements">
+			<sf:form name="f" method="post"
+				action="${pageContext.request.contextPath}/docreateupdate"
+				commandName="update">
+				<sf:input type="hidden" name="updateId" path="updateId" />
+				<table>
+					<tr>
+						<td class="fieldTitle">Notes:</td>
+						<td><sf:input class="control fieldSpace" path="notes" name="notes"
+								type="text" /><br /> <sf:errors path="notes" cssClass="error"></sf:errors></td>
+					</tr>
 
-	</sf:form>
+					<tr>
+						<td></td>
+						<td><input class="control btn btn-info myButton fieldSpace" value="Submit" type="submit" /></td>
 
-<%@ include file="shared/footer.jspf" %>
+					</tr>
+				</table>
+
+			</sf:form>
+		</div>
+	</div>
+	<%@ include file="shared/footer.jspf"%>

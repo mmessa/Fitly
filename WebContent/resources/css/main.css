@@ -207,7 +207,7 @@ h3 {
 }
 
 .myEditButton:hover {
-	color: black;	
+	color: black;
 }
 
 .myDeleteButton {
@@ -222,7 +222,7 @@ h3 {
 }
 
 .myDeleteButton:hover {
-	color:black;
+	color: black;
 	background-color: #d9534f !important;
 }
 
@@ -230,14 +230,31 @@ h3 {
 	font-family: "Arial Black", Gadget, sans-serif !important;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: #03A9F4 !important;
+	color: white !important; background-color : #03A9F4 !important;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	background-color: #03A9F4 !important;
 }
 
 .myButton:hover {
-	color: #212121;
+	color: #212121 !important;
+}
+
+.myButton2 {
+	font-family: "Arial Black", Gadget, sans-serif !important;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+	color: white !important; background-color : #03A9F4 !important;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	background-color: #03A9F4 !important;
+}
+
+.myButton2:hover {
+	color: #212121 !important;
 }
 
 .quote {
@@ -340,9 +357,15 @@ h3 {
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+	height: 250px;
 }
 
 .profileElements {
+	margin: -25px 0px 0px 0px;
+	padding: 0 0 0 30px;
+}
+
+.name {
 	
 }
 
@@ -355,6 +378,8 @@ h3 {
 	overflow: hidden;
 	width: 200px;
 	height: 200px;
+	float: left;
+	margin-right: 20px;
 }
 
 .fieldSpace {
@@ -374,6 +399,50 @@ h3 {
 	margin-top: -40px;
 }
 
+#accordion .table {
+	margin-bottom: 5px;
+}
+
+#accordion .table th {
+	
+}
+
+#accordion .noneRecorded {
+	margin-bottom: 10px;
+}
+
 .profileContent {
-	margin-bottom: 30px;	
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
+.coins {
+	font-size: 20px;
+}
+
+.xp {
+	margin-top: 80px;
+}
+.nextLevel {
+	margin-top: 95px;
+}
+
+.profileTitle {
+	color: white;
+	text-align: left;
+	font-size: 30px;
+}
+
+.profileField {
+	margin-left: 5px; 
+	font-size: 20px;
+}
+
+.upload {
+	font-size: 16px;
+	margin: 0 0 20px 2px;
+}
+
+.date {
+	width: 233px;
 }

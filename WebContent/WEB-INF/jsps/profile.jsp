@@ -3,59 +3,103 @@
 
 <h3 id="myProfile">My Profile</h3>
 <div class="profileHeader">
-	<img src="<c:url value='/uploads/${profile.userId}/profile.jpg'/>"
-		alt="pic" class="profilePicture">
-	<div class="profileElements">
-		<c:out value='${profile.firstName}' />
-		<c:out value='${profile.lastName}' />
-		<c:out value='${profile.level}' />
-		<c:out value='${profile.experiencePoints}' />
-		<c:out value='${profile.coins}' />
+	<div class="row">
+		<div class="col-sm-3 col-md-3 col-lg-2">
+			<img src="<c:url value='/uploads/${profile.userId}/profile.jpg'/>"
+				alt="pic" class="profilePicture">
+		</div>
+		<div class="profileElements col-sm-6 col-md-7 col-lg-8">
+			<h2 class="name">
+				<c:out value='${profile.firstName}' />
+				<c:out value='${profile.lastName}' />
+			</h2>
+			<div class="levelXp">
+				<h4>
+					Level:
+					<c:out value='${profile.level}' />
+				</h4>
+				<div class="xp">
+					<h4>
+						Experience:
+						<c:out value='${profile.experiencePoints}' />
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3 col-md-2 col-lg-2">
+			<img src="<c:url value='/static/images/static/shiny-coin2.png'/>"
+				alt="pic" height="45px" width="45px"> <span class="coins"><c:out
+					value='${profile.coins}' /></span>
+			<div class="nextLevel">
+				<h4>
+					Next Level:
+					<c:choose>
+						<c:when test="${profile.level == 1}">
+						3000
+					</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${profile.level == 2}">
+								7000
+							</c:when>
+								<c:otherwise>
+								Max
+							</c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>
+
+				</h4>
+			</div>
+		</div>
 	</div>
 
-</div>
-<div class="container-fluid">
-<div class="profileContent">
 
-	<br> First Name =
-	<c:out value='${profile.firstName}' />
-	<br> Last Name =
-	<c:out value='${profile.lastName}' />
-	<br> Image =
-	<c:out value='${profile.image}' />
-	<br> Height Feet =
-	<c:out value='${profile.heightFeet}' />
-	<br> Height Inches =
-	<c:out value='${profile.heightInches}' />
-	<br> DOB =
-	<c:out value='${profile.DOB}' />
-	<br> Gender =
-	<c:out value='${profile.gender}' />
-	<br> City =
-	<c:out value='${profile.city}' />
-	<br> State =
-	<c:out value='${profile.state}' />
-	<br> Zip Code =
-	<c:out value='${profile.zipCode}' />
-	<br> Gym =
-	<c:out value='${profile.gym}' />
-	<br> Level =
-	<c:out value='${profile.level}' />
-	<br> XP =
-	<c:out value='${profile.experiencePoints}' />
-	<br> Coins =
-	<c:out value='${profile.coins}' />
-	<br> <br> <a class="btn btn-info myButton"
-		href="<c:url value='editprofile'/>">Edit Profile</a>
+
+
+
 </div>
+
+
+
+<div class="container-fluid">
+	<div class="profileContent">
+		<div class="row">
+			<div class="col-lg-6">
+				<span class="profileTitle">Name:</span> <span class="profileField"><c:out
+						value='${profile.firstName}' /> <c:out
+						value='${profile.lastName}' /></span> <br> <span
+					class="profileTitle">Height:</span> <span class="profileField"><c:out
+						value='${profile.heightFeet}' />" <c:out
+						value='${profile.heightInches}' />'</span> <br> <span
+					class="profileTitle">DOB:</span> <span class="profileField"><c:out
+						value='${profile.DOB}' /></span> <br> <span class="profileTitle">Gender:</span>
+				<span class="profileField"><c:out value='${profile.gender}' /></span>
+			</div>
+			<div class="col-lg-6">
+				<span class="profileTitle">City:</span> <span class="profileField"><c:out
+						value='${profile.city}' /></span> <br> <span class="profileTitle">State:</span>
+				<span class="profileField"><c:out value='${profile.state}' /></span>
+				<br> <span class="profileTitle">Zip Code:</span> <span
+					class="profileField"><c:out value='${profile.zipCode}' />
+					<br>
+					<span class="profileTitle">Gym:</span> <span class="profileField"><c:out
+							value='${profile.gym}' /></span>
+			</div>
+
+		</div>
+
+		<br> <br> <a class="btn btn-info myButton"
+			href="<c:url value='editprofile'/>">Edit Profile</a>
+	</div>
 	<div id="accordion">
 		<h3>Weight History</h3>
 		<div>
 
 			<c:choose>
 				<c:when test="${weights.size() == 0}">
-		No weights recorded
-	</c:when>
+					<div class="noneRecorded">No weights recorded</div>
+				</c:when>
 				<c:otherwise>
 					<table class="table">
 						<thead>
@@ -112,8 +156,8 @@
 		<div>
 			<c:choose>
 				<c:when test="${updates.size() == 0}">
-		No updates recorded
-	</c:when>
+					<div class="noneRecorded">No updates recorded</div>
+				</c:when>
 				<c:otherwise>
 					<table class="table">
 						<thead>
@@ -131,7 +175,7 @@
 									<td>
 										<form action="createupdate" method="post">
 											<button type="submit" name="updateId" value="${row.updateId}"
-												class="btn btn-info myButton">Edit</button>
+												class="btn btn-secondary myEditButton">Edit</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -139,7 +183,7 @@
 									<td>
 										<form action="deleteupdate" method="post">
 											<button type="submit" name="updateId" value="${row.updateId}"
-												class="btn-link">Delete</button>
+												class="btn btn-danger myButtonDanger">Delete</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -162,8 +206,8 @@
 		<div>
 			<c:choose>
 				<c:when test="${bodyFats.size() == 0}">
-		No body fats recorded
-	</c:when>
+					<div class="noneRecorded">No body fats recorded</div>
+				</c:when>
 				<c:otherwise>
 					<table class="table">
 						<thead>
@@ -181,7 +225,8 @@
 									<td>
 										<form action="createbodyfat" method="post">
 											<button type="submit" name="bodyFatId"
-												value="${row.bodyFatId}" class="btn-link">Edit</button>
+												value="${row.bodyFatId}"
+												class="btn btn-secondary myEditButton">Edit</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -189,7 +234,8 @@
 									<td>
 										<form action="deletebodyfat" method="post">
 											<button type="submit" name="bodyFatId"
-												value="${row.bodyFatId}" class="btn-link">Delete</button>
+												value="${row.bodyFatId}"
+												class="btn btn-danger myDeleteButton">Delete</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -211,8 +257,8 @@
 		<div>
 			<c:choose>
 				<c:when test="${supplements.size() == 0}">
-		No supplements recorded
-	</c:when>
+					<div class="noneRecorded">No supplements recorded</div>
+				</c:when>
 				<c:otherwise>
 					<table class="table">
 						<thead>
@@ -228,7 +274,8 @@
 									<td>
 										<form action="createsupplement" method="post">
 											<button type="submit" name="supplementId"
-												value="${row.supplementId}" class="btn-link">Edit</button>
+												value="${row.supplementId}"
+												class="btn btn-secondary myEditButton">Edit</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -236,7 +283,8 @@
 									<td>
 										<form action="deletesupplement" method="post">
 											<button type="submit" name="supplementId"
-												value="${row.supplementId}" class="btn-link">Delete</button>
+												value="${row.supplementId}"
+												class="btn btn-danger myDeleteButton">Delete</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -258,8 +306,8 @@
 		<div>
 			<c:choose>
 				<c:when test="${goals.size() == 0}">
-		No goals recorded
-	</c:when>
+					<div class="noneRecorded">No goals recorded</div>
+				</c:when>
 				<c:otherwise>
 					<table class="table">
 						<thead>
@@ -283,7 +331,7 @@
 									<td>
 										<form action="creategoal" method="post">
 											<button type="submit" name="goalId" value="${row.goalId}"
-												class="btn-link">Edit</button>
+												class="btn btn-secondary myEditButton">Edit</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -291,7 +339,7 @@
 									<td>
 										<form action="deletegoal" method="post">
 											<button type="submit" name="goalId" value="${row.goalId}"
-												class="btn-link">Delete</button>
+												class="btn btn-danger myDeleteButton">Delete</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
 										</form>
@@ -351,7 +399,8 @@
 											<td>
 												<form action="docompleteperformance" method="post">
 													<button type="submit" name="performanceId"
-														value="${row.performanceId}" class="btn-link">Complete</button>
+														value="${row.performanceId}"
+														class="btn btn-secondary myEditButton">Complete</button>
 													<input type="hidden" name="${_csrf.parameterName}"
 														value="${_csrf.token}" />
 												</form>
@@ -360,7 +409,7 @@
 									</c:choose>
 									<td>
 										<form action="deleteperformance" method="post">
-											<button class="btn btn-danger" type="submit"
+											<button class="btn btn-danger myDeleteButton" type="submit"
 												name="performanceId" value="${row.performanceId}">Delete</button>
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
@@ -370,6 +419,8 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					<a class="btn btn-info myButton"
+						href="<c:url value='/challenges'/>">Go To Challenges</a>
 				</c:otherwise>
 			</c:choose>
 		</div>

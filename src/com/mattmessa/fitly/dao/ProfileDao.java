@@ -59,7 +59,7 @@ public class ProfileDao {
 				profile.setLastName(rs.getString("lastName"));
 				profile.setHeightFeet(rs.getInt("heightFeet"));
 				profile.setHeightInches(rs.getInt("heightInches"));
-				profile.setDOB(rs.getDate("DOB"));
+				profile.setDOB(rs.getString("DOB"));
 				profile.setGender(rs.getString("gender"));
 				profile.setCity(rs.getString("city"));
 				profile.setState(rs.getString("state"));
@@ -80,8 +80,9 @@ public class ProfileDao {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(profile);
 		System.out.printf("updating profile\n");
 		System.out.printf("level = %d\n", profile.getLevel());
+		System.out.printf("DOB = %s\n", profile.getDOB());
 		
-		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints, coins=:coins where userId=:userId", params) == 1;
+		return jdbc.update("update profile set firstName=:firstName, lastName=:lastName, heightFeet=:heightFeet, heightInches=:heightInches, DOB=:DOB, gender=:gender, city=:city, state=:state, zipCode=:zipCode, gym=:gym, level=:level, experiencePoints=:experiencePoints, coins=:coins where userId=:userId", params) == 1;
 	}
 	
 }

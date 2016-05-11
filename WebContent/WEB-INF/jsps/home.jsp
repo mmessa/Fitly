@@ -39,7 +39,7 @@
 	</sec:authorize>
 	-->
 <div class="svg">
-<img src="<c:url value='/static/images/static/test.png'/>" width="100%">
+<img src="<c:url value='/static/images/static/home_page.jpg'/>" width="100%">
 </div>
 
 

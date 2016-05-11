@@ -1,7 +1,6 @@
 package com.mattmessa.fitly.dao;
 
 import java.sql.Blob;
-import java.util.Date;
 
 public class Profile {
 	private int userId;
@@ -10,7 +9,7 @@ public class Profile {
 	private Blob image;
 	private int heightFeet;
 	private int heightInches;
-	private Date DOB;
+	private String DOB;
 	private String gender;
 	private String city;
 	private String state;
@@ -25,7 +24,7 @@ public class Profile {
 	}
 	
 	public Profile(int userId, String firstName, String lastName, Blob image, int heightFeet, int heightInches,
-			Date dOB, String gender, String city, String state, int zipCode, String gym, int level, int experiencePoints,
+			String dOB, String gender, String city, String state, int zipCode, String gym, int level, int experiencePoints,
 			int coins) {
 		super();
 		this.userId = userId;
@@ -34,7 +33,7 @@ public class Profile {
 		this.image = image;
 		this.heightFeet = heightFeet;
 		this.heightInches = heightInches;
-		DOB = dOB;
+		this.DOB = dOB;
 		this.gender = gender;
 		this.city = city;
 		this.state = state;
@@ -84,10 +83,10 @@ public class Profile {
 	public void setHeightInches(int heightInches) {
 		this.heightInches = heightInches;
 	}
-	public Date getDOB() {
+	public String getDOB() {
 		return DOB;
 	}
-	public void setDOB(Date dOB) {
+	public void setDOB(String dOB) {
 		DOB = dOB;
 	}
 	public String getGender() {

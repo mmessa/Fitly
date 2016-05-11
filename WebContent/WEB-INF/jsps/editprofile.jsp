@@ -7,10 +7,15 @@
 			<sf:form method="post"
 				action="${pageContext.request.contextPath}/uploader?${_csrf.parameterName}=${_csrf.token}"
 				encType="multipart/form-data">
+				 <span class="fieldTitle upload">Profile Picture:</span>
 
-				<input type="file" name="file" value="Select image ..." />
 
-				<input type="submit" value="Start upload" />
+						<input type="file" name="file" value="Select image ..."
+							class="fieldSpace" />
+						
+						<input type="submit" value="Start upload"
+							class=" fieldSpace btn btn-info myButton2" />
+					
 			</sf:form>
 			<sf:form name="f" method="post"
 				action="${pageContext.request.contextPath}/updateprofile"
@@ -41,7 +46,19 @@
 								name="heightInches" type="text" /><br /> <sf:errors
 								path="heightInches" cssClass="error"></sf:errors></td>
 					</tr>
-
+					<tr>
+						<td class="fieldTitle">Gender:</td>
+						<td><sf:input class="control fieldSpace" path="gender"
+								name="gender" type="text" /><br /> <sf:errors
+								path="gender" cssClass="error"></sf:errors></td>
+					</tr>
+					<tr>
+						<td class="fieldTitle">DOB:</td>
+						<td><sf:input class="control fieldSpace" path="DOB"
+								name="DOB" type="text" /><br /> <sf:errors
+								path="DOB" cssClass="error"></sf:errors></td>
+					</tr>
+					
 					<tr>
 						<td class="fieldTitle">City:</td>
 						<td><sf:input class="control fieldSpace" path="city"
