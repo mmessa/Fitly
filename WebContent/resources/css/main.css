@@ -446,3 +446,7 @@ h3 {
 .date {
 	width: 233px;
 }
+
+.completedChallenge {
+	margin-bottom: 18px;
+}

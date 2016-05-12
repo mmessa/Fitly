@@ -144,7 +144,7 @@
 				</c:when>
 					<c:otherwise>
 						<c:forEach var="row" items="${completedChallenges}">
-							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 completedChallenge">
 
 								<img
 									src="<c:url value='/static/images/static/${row.pictureUrl}'/>"
@@ -152,6 +152,7 @@
 
 
 							</div>
+							
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>

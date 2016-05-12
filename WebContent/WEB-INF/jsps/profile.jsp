@@ -35,15 +35,15 @@
 					Next Level:
 					<c:choose>
 						<c:when test="${profile.level == 1}">
-						3000
+						1000
 					</c:when>
 						<c:otherwise>
 							<c:choose>
 								<c:when test="${profile.level == 2}">
-								7000
+								3000
 							</c:when>
 								<c:otherwise>
-								Max
+								7000
 							</c:otherwise>
 							</c:choose>
 						</c:otherwise>
